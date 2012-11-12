@@ -10,6 +10,8 @@ from Queue import Queue
 from threading import Thread
 from multiprocessing import *
 
+from config import *
+
 #import numpy, matplotlib
 #from scipy.cluster import hierarchy
 #from scipy.spatial import distance
@@ -17,16 +19,11 @@ from multiprocessing import *
 f = file('./interdata', 'w+')
 fr = file('./result', 'w+')
 #C = nx.read_gml('./inputs/GML/polbooks.gml')
-#C = nx.read_gml('./inputs/GML/karate.gml')
+C = nx.read_gml('./inputs/GML/karate.gml')
 #C = nx.read_gml('./inputs/GML/dolphins.gml')
-C = nx.Graph(formal_edgelist('./benchmarks/benchmark_2_2/network.dat'))
+#C = nx.Graph(formal_edgelist('./benchmarks/benchmark_2_2/network.dat'))
 
-correct = float(-0.01)
-alpha = 1.0
-beta = 0.6
-gama = 0.6
 NodeMaxValue=max(C.nodes())+1
-MinSeedSize = 5
 
 class ThreadGetNature(Thread):
 	def __init__(self, queue, result):
@@ -62,9 +59,19 @@ def get_maximum_cliques(network):
 
 	seeds = deal_cliques(cl_over_2)
 	count_len = []
+	sum_tem = 0
 	for x in seeds:
 		count_len.append(len(x))
-	MinSeedSize = sum(count_len)/len(seeds)
+
+	if avg_type == 1:
+		MinSeedSize = sum(count_len)/len(seeds)
+	elif avg_type ==2:
+		ave = sum(count_len)/len(seeds)
+		for x in count_len:
+			sum_tem = sum_tem + pow((ave-x),2)
+
+		MinSeedSize = pow(sum_tem/len(seeds),0.5) + ave
+
 	print "MinSeedSize: ", MinSeedSize
 	seeds = [x for x in seeds if len(x) >= MinSeedSize]
 #	seeds = seeds[:10]
@@ -238,18 +245,23 @@ def get_all_nature_community(network):
 		comm_nodes = comm_nodes + x.nodes()
 	left_list = [x for x in all_nodes if x not in comm_nodes]
 
-	single_node_Graph = nx.Graph()
 	while len(left_list)>0:
 		seed_node = get_degree_max(left_list)
 		print "seed_node",seed_node
+		single_node_Graph = nx.Graph()
 		single_node_Graph.add_node(seed_node)
 		single_node_Graph = get_nature_community(single_node_Graph)
+		sngn = single_node_Graph.nodes()
+		print "seed_community: ", sngn
 		communities.append(single_node_Graph)
-		s_nodes = single_node_Graph.nodes()
-		for x in s_nodes:
+		for x in sngn:
 			if x in left_list:
 				left_list.remove(x)
-		single_node_Graph.clear()
+
+	i = 0
+	for x in communities:
+		print "i = ",i,x.nodes()
+		i = i+1
 
 	communities = deal_communities(communities)
 	return communities
@@ -379,9 +391,7 @@ def get_all_COD(communities):
 def merge_all_communities(communities):####TODO  pop y可以,pop x会多pop出去  我觉得应该把cod的判断放在外边
 	# 遍历一遍
 	le = len(communities)
-	communities_end = []
 	communities_iter = communities
-#	flag = -1
 	bm = [0]*le
 	result = []
 	for i in range(le):
@@ -423,7 +433,11 @@ def merge_all_communities(communities):####TODO  pop y可以,pop x会多pop出�
 			communities.pop(x)
 	for x in result:
 		communities.append(x)
-	return communities
+
+	if len(communities) != le:
+		return merge_all_communities(communities)
+	else:
+		return communities
 
 
 def main():
@@ -468,12 +482,11 @@ def main():
 		for y in communities[communities.index(x)+1:]:
 			temp = x.intersection(y)
 			overlapping_nodes = overlapping_nodes.union(temp)
-	print "overlapping nodes are: ", list(overlapping_nodes)
+	print "overlapping nodes are: ", sorted(list(overlapping_nodes))
 	fr.writelines(str(list(overlapping_nodes)))
 	fr.write("----------------------------------end\n")
 	f.close()
 	fr.close()
-
 
 	for x in results:
 		nx.draw(x, node_color = (random(), random(), random()))
