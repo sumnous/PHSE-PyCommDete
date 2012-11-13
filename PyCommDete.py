@@ -18,8 +18,8 @@ from config import *
 
 f = file('./interdata', 'w+')
 fr = file('./result', 'w+')
-#C = nx.read_gml('./inputs/GML/polbooks.gml')
-C = nx.read_gml('./inputs/GML/karate.gml')
+C = nx.read_gml('./inputs/GML/polbooks.gml')
+#C = nx.read_gml('./inputs/GML/karate.gml')
 #C = nx.read_gml('./inputs/GML/dolphins.gml')
 #C = nx.Graph(formal_edgelist('./benchmarks/benchmark_2_2/network.dat'))
 

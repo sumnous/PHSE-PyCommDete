@@ -1,4 +1,9 @@
+*.o
+.gitignore
+.dropbox
+.idea/*
 *.py[co]
+*.pyc
 
 # Packages
 *.egg

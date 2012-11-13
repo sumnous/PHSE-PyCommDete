@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf8 -*-
 
 import numpy
@@ -11,6 +10,7 @@ from common.clustering import compare_communities
 #Mutual information
 def mutual_info(x,y):
 	print "x",x
+	print "type: ", type(x)
 	N=double(x.size)
 	I=0.0
 	eps = numpy.finfo(float).eps
@@ -47,18 +47,18 @@ def data_formal(communities):
 if __name__=="__main__":
     #Example from http://nlp.stanford.edu/IR-book
     #/html/htmledition/evaluation-of-clustering-1.html
-    Ground_truth = array(Cover([[0,1,2,3,4,5,6,7,10,11,12,13,16,17,19,21], \
-							[8,9,14,15,18,20,22,23,24,25,26,27,28,29,30,31,32,33]]))
-    Result = array(Cover([[32, 33, 8, 9, 14, 15, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31], \
-							[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 19, 21, 28, 30]]))
-    print compare_communities(Ground_truth, Result, method="nmi", remove_none=False)
-    print "G", Ground_truth
-    print "R", Result
-    print "nmi", nmi(Ground_truth, Result)
+    #Ground_truth = Cover([[0,1,2,3,4,5,6,7,10,11,12,13,16,17,19,21], \
+	#						[8,9,14,15,18,20,22,23,24,25,26,27,28,29,30,31,32,33]])
+    #Result = Cover([[32, 33, 8, 9, 14, 15, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31], \
+	#						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 16, 17, 19, 21, 28, 30]])
+    #print compare_communities(Ground_truth, Result, method="nmi", remove_none=False)
+    #print "G", Ground_truth
+    #print "R", Result
+    #print "nmi", nmi(Ground_truth, Result)
     #print nmi(array([1,1,1,1,1,1,1,1,3,3,1,1,1,1,2,2,1,1,2,3,2,1,2,2,2,2,2,2,3,2,3,2,2,2])
-     #         ,array([1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,2,2,1,1,2,1,2,1,2,2,2,2,2,2,2,2,2,2,2]))
-    #print nmi(array([1,1,1,1,1,1,2,2,2,2,2,2,3,3,3,3,3])
-    #          ,array([1,2,1,1,1,1,1,2,2,2,2,3,1,1,3,3,3]))
+    #          ,array([1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,2,2,1,1,2,1,2,1,2,2,2,2,2,2,2,2,2,2,2]))
+    print nmi(array([1,1,1,1,1,1,2,2,2,2,2,2,3,3,3,3,3])
+              ,array([1,2,1,1,1,1,1,2,2,2,2,3,1,1,3,3,3]))
               
               
            
