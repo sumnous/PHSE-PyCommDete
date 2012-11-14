@@ -1,80 +1,51 @@
 # -*- coding: utf8 -*-
 from __future__ import division
+
+import sys
 import networkx as nx
 import matplotlib.pyplot as plt
-from math import pow
-from random import random
-from inputs.formal_edgelist import formal_edgelist
-
-from Queue import Queue
-from threading import Thread
-from multiprocessing import *
 
 from config import *
+from random import random
+from multiprocessing import Process, Pool
+from inputs.formal_edgelist import formal_edgelist
 
-#import numpy, matplotlib
-#from scipy.cluster import hierarchy
-#from scipy.spatial import distance
+filelist=['./inputs/GML/polbooks.gml', \
+		  './inputs/GML/karate.gml',   \
+		  './inputs/GML/dolphins.gml', \
+		  './inputs/GML/netscience.gml']
 
 f = file('./interdata', 'w+')
 fr = file('./result', 'w+')
-C = nx.read_gml('./inputs/GML/polbooks.gml')
-#C = nx.read_gml('./inputs/GML/karate.gml')
-#C = nx.read_gml('./inputs/GML/dolphins.gml')
-#C = nx.Graph(formal_edgelist('./benchmarks/benchmark_2_2/network.dat'))
-
-NodeMaxValue=max(C.nodes())+1
-
-class ThreadGetNature(Thread):
-	def __init__(self, queue, result):
-		Thread.__init__(self)
-		self.queue = queue
-		self.result = result
-	def run(self):
-#		while self.queue.qsize():
-		clique = self.queue.get()
-		print self.queue.qsize()
-		Graph = nx.Graph(C.subgraph(clique))
-		self.result.append(get_nature_community(Graph))
-		self.queue.task_done()
-
-class ThreadGetFitness(Thread):
-	def __init__(self, queue, result, G_nodes):
-		Thread.__init__(self)
-		self.queue = queue
-		self.result = result
-		self.G_nodes = G_nodes
-	def run(self):
-#		while self.queue.qsize():
-		x = self.queue.get()
-		val = get_fitness(nx.Graph(C.subgraph((self.G_nodes+[x]))))
-		self.result.append([val, x])
-		self.queue.task_done()
+#C = nx.read_gml(filelist[1])
+C = nx.Graph(formal_edgelist('./benchmarks/benchmark_2_2/network.dat'))
 
 def get_maximum_cliques(network):
 	# find the maximum cliques in network C, clique's nodes are over 2.
 	# http://networkx.lanl.gov/reference/algorithms.clique.html
 	cl = [x for x in nx.find_cliques(network)]
-	cl_over_2 = [set(m) for m in cl if len(m) > 2]
-
+	cl_over_2 = filter(lambda x:len(x)>2, cl)
 	seeds = deal_cliques(cl_over_2)
-	count_len = []
-	sum_tem = 0
-	for x in seeds:
-		count_len.append(len(x))
+	#print ":::::::::::",seeds
+#	sys.exit(0)
 
-	if avg_type == 1:
+	count_len = [len(x) for x in seeds]
+
+	if avg_type == 0:
+		MinSeedSize = 3
+	elif avg_type == 1:
+		MinSeedSize = 4
+	elif avg_type == 2:
 		MinSeedSize = sum(count_len)/len(seeds)
-	elif avg_type ==2:
+	elif avg_type ==3:
 		ave = sum(count_len)/len(seeds)
-		for x in count_len:
-			sum_tem = sum_tem + pow((ave-x),2)
-
-		MinSeedSize = pow(sum_tem/len(seeds),0.5) + ave
+		sum_tem = sum(map(lambda x:pow((ave-x),2),count_len))
+		MinSeedSize = ave - pow(sum_tem/len(seeds),0.5)
+	#		for x in count_len:
+	#			sum_tem = sum_tem + pow((ave-x),2)
 
 	print "MinSeedSize: ", MinSeedSize
 	seeds = [x for x in seeds if len(x) >= MinSeedSize]
-#	seeds = seeds[:10]
 	out_list = ["seeds", str(seeds), '\n']
 	f.writelines(out_list)
 	print "seeds:\n", seeds
@@ -89,16 +60,16 @@ def deal_cliques(cliques):
 	return new_cliques
 
 def deal_cliques_once(cliques):
+	le = len(cliques)
+	if le == 0:
+		return []
+	if le == 1:
+		return list(cliques[0])
+
 	# sort the list of lists based on the length of the list
 	cliques.sort(key=lambda x:len(x), reverse=True)
 	# merge the cliques if they are shared n-1 nodes
 	result=[]
-	le = len(cliques)
-	if le == 0:
-		return result
-	elif le == 1:
-		return list(cliques[0])
-
 	current=[]
 	bitmap=[0]*len(cliques)
 	btlen = len(bitmap)
@@ -108,15 +79,18 @@ def deal_cliques_once(cliques):
 				current.append(i)
 				bitmap[i] = 1
 				break
+#				TODO
 
 		remain=[x for x in range(btlen) if bitmap[x]==0]
 
 		def c_match(current_list, c):
+			x = set(cliques[c])
 			for i in current_list:
-				if len(cliques[c].intersection(cliques[i])) == len(cliques[i])-1 \
-				and len(cliques[c]) ==  len(cliques[i]):
+				y = set(cliques[i])
+				if len(x) == len(y) and len(x.intersection(y)) == len(y)-1:
 					return True
 			return False
+
 		for c in remain:
 			if c_match(current, c):
 				current.append(c)
@@ -126,39 +100,20 @@ def deal_cliques_once(cliques):
 			tmp = tmp.union(cliques[x])
 		result.append(tmp)
 		current=[]
-
-#
-#	current = cliques[0]
-#	current_len = len(current)
-#	i=1
-#	cliques_len = len(cliques)
-#	while i < cliques_len:
-#		if len(current.intersection(cliques[i])) == current_len-1 and len(cliques[i]) == current_len:
-#			current = current.union(cliques[i])
-#		else:
-#			result.append(set(current))
-#			current = cliques[i]
-#			current_len = len(current)
-#		i = i+1
-#	result.append(set(current))
-#	result = [sorted(m) for m in result]
-#	result.sort(key=lambda x:len(x), reverse=True)
 	return result
 
 def get_neighbors(Graph):
 	"""find subgraph's(or graph, type is Graph) neighbor nodes in original graph C"""
-	G_neighbors = [0]*NodeMaxValue
+	flag={}
 	def mark_true(x):
 		t = C.neighbors(x)
 		for x in t:
-			G_neighbors[x] = 1
+			flag[x]=1
 	map(mark_true, Graph.nodes())
-
 	for x in Graph.nodes():
-		G_neighbors[x]=0
-	result=[x for x in range(len(G_neighbors)) if G_neighbors[x]]
+		flag[x]=0
 
-	return result
+	return [x for x in C.nodes() if flag.get(x)]
 
 def get_fitness(Graph):
 	"""compute the fitness of the graph"""
@@ -177,7 +132,7 @@ def get_fitness_v_max(Graph):
 	compute the fitness_v(dic, {node, fitness of adding vertex}), find fitness_v_max"""
 	G_neighbors = get_neighbors(Graph)
 	v_max_node=[float(-100),-1]
-	vertex_list = [] # 添加一个初始值,将最大贡献度所对应的一些节点一起加入社区
+#	vertex_list = [] # 添加一个初始值,将最大贡献度所对应的一些节点一起加入社区
 	if G_neighbors == []:
 		pass
 	else:
@@ -186,18 +141,7 @@ def get_fitness_v_max(Graph):
 		for x in G_neighbors:
 			val = get_fitness(nx.Graph(C.subgraph((G_nodes+[x]))))
 			result.append([val, x])
-#
-#		queue = Queue()
-#		for x in G_neighbors:
-#			queue.put(x)
-#		result=[]
-#		for x in range(len(G_neighbors)):
-#			t = ThreadGetFitness(queue, result, G_nodes)
-#			t.start()
-#		queue.join()
 
-#		print "len of G_neighbors:", len(G_neighbors)
-#		print "len of result is :",len(result)
 		for c in result:
 			if c[0]>v_max_node[0]:
 				v_max_node = []
@@ -232,15 +176,41 @@ def get_nature_community(Graph):
 		G_nature_community = get_nature_community(G_iter)
 	return G_nature_community
 
+def process_f(cli_list):
+	tmp_result = []
+	while len(cli_list) > 0:
+		c = cli_list.pop()
+		comm = get_nature_community(nx.Graph(C.subgraph(c)))
+		if len(comm) == len(C):
+			continue
+		tmp_result.append(comm)
+		def is_not_subset(a):
+			for x in a:
+				if x not in comm:
+					return True
+			return False
+		cli_list = filter(is_not_subset, cli_list)
+	return tmp_result
+
 def get_all_nature_community(network):
 	cliques = get_maximum_cliques(network)
+	pool_result = []
+	process_num=6
+	pool = Pool(process_num)
+	cli_len = len(cliques)
+	for i in range(process_num):
+		args=([cliques[j] for j in range(cli_len) if j%process_num==i],)
+		pool_result.append(pool.apply_async(process_f,args))
+		
+	pool.close()
+	pool.join()
+	
+	communities=[]
+	for item in [x.get() for x in pool_result]:
+		communities = communities+item
+	
 	all_nodes = network.nodes()
-	def process_f(cli):
-		Graph = nx.Graph(C.subgraph(cli))
-		return get_nature_community(Graph)
-	communities = map(process_f, cliques)
-
-	comm_nodes = []
+	comm_nodes=[]
 	for x in communities:
 		comm_nodes = comm_nodes + x.nodes()
 	left_list = [x for x in all_nodes if x not in comm_nodes]
@@ -290,12 +260,10 @@ def deal_communities(communities):
 	# is_sub_graph
 	def to_be_del(item, com):
 		for x in com:
-			if len(x)<= len(item):
-				continue
-			else:
-				if set(item).issubset(set(x.nodes())):
+			if len(x)> len(item) and set(item).issubset(set(x.nodes())):
 					return True
 		return False
+
 	bitmap=[0]*len(communities)
 	for i in range(len(communities)):
 		if to_be_del(communities[i].nodes(), communities):
@@ -306,17 +274,16 @@ def deal_communities(communities):
 	return communities
 
 def get_communities_overlapping_degree(community1, community2):
-
 	nei1 = get_neighbors(community1)
 	nei2 = get_neighbors(community2)
 	val_o = get_overlapping_nodes(community1.nodes(), community2.nodes())
 	val_m = get_merging_nodes(community1.nodes(), community2.nodes())
 	if len(nei1)==0 and len(nei2)==0:
-		COD = len(val_o) / len(val_m)
+		cod = len(val_o) / len(val_m)
 	else:
-		COD = beta*len(val_o) / len(val_m) + \
-		      (1-beta)*len(get_overlapping_nodes(nei1, nei2)) / len(get_merging_nodes(nei1, nei2))
-	return COD
+		cod = beta*len(val_o) / len(val_m) + \
+			  (1-beta)*len(get_overlapping_nodes(nei1, nei2)) / len(get_merging_nodes(nei1, nei2))
+	return cod
 
 def compare_communities(community1_nodes, community2_nodes):
 	len1 = len(community1_nodes)
@@ -339,7 +306,7 @@ def get_degree_max(nodes):
 		if degree_dict[x] > max:
 			max = degree_dict[x]
 			node = x
-	return x
+	return node
 
 def get_overlapping_nodes(community1_nodes, community2_nodes):
 	return [x for x in community1_nodes if x in community2_nodes]
@@ -358,20 +325,20 @@ def get_merging_nodes(community1_nodes, community2_nodes):
 			result.append(x)
 	return result
 
-def is_sub_graph(graph1, graph2):
-	len1 = len(graph1.nodes())
-	len2 = len(graph2.nodes())
-	set1 = set(graph1.nodes())
-	set2 = set(graph2.nodes())
-	min_graph = nx.Graph()
-	if len1 >= len2:
-		if set2.issubset(set1) == True:
-			min_graph = graph2
-		return (set2.issubset(set1), min_graph)
-	else:
-		if set1.issubset(set2) == True:
-			min_graph = graph1
-		return (set1.issubset(set2), min_graph)
+#def is_sub_graph(graph1, graph2):
+#	len1 = len(graph1.nodes())
+#	len2 = len(graph2.nodes())
+#	set1 = set(graph1.nodes())
+#	set2 = set(graph2.nodes())
+#	min_graph = nx.Graph()
+#	if len1 >= len2:
+#		if set2.issubset(set1) == True:
+#			min_graph = graph2
+#		return (set2.issubset(set1), min_graph)
+#	else:
+#		if set1.issubset(set2) == True:
+#			min_graph = graph1
+#		return (set1.issubset(set2), min_graph)
 
 def merge_communities(community1, community2):
 	community_new = nx.Graph(C.subgraph((community1.nodes() + community2.nodes())))
@@ -379,17 +346,17 @@ def merge_communities(community1, community2):
 	f.writelines(out_list)
 	return community_new
 
-def get_all_COD(communities):
-	#计算社区中两两社区的社区重叠度,,未用
-	COD = []
-	for x in communities:
-		for y in communities[(communities.index(x)+1):]:
-			cod = get_communities_overlapping_degree(x, y)
-			COD.append([cod, x, y])
-	return COD
+#
+#def get_all_cod(communities):
+#	#计算社区中两两社区的社区重叠度,,未用
+#	cod = []
+#	for x in communities:
+#		def inner_get_cod(y):
+#			return get_communities_overlapping_degree(x, y)
+#		cod.append(map(inner_get_cod, communities))
+#	return cod
 
-def merge_all_communities(communities):####TODO  pop y可以,pop x会多pop出去  我觉得应该把cod的判断放在外边
-	# 遍历一遍
+def merge_all_communities(communities):
 	le = len(communities)
 	communities_iter = communities
 	bm = [0]*le
@@ -439,9 +406,16 @@ def merge_all_communities(communities):####TODO  pop y可以,pop x会多pop出�
 	else:
 		return communities
 
-
 def main():
-	# read network dataset as graph C
+	import sys
+#	print "syaargv0 is", sys.argv[0]
+#	sys.exit(0)
+	global alpha,beta,gama,avg_type
+
+	if len(sys.argv) > 2:
+		avg_type=int(sys.argv[1])
+
+# read network dataset as graph C
 
 	#nx.draw(C)
 	#plt.savefig("karate_club_graph.png")
@@ -496,12 +470,14 @@ def main():
 if __name__ == '__main__':
 	import time
 	start = time.time()
+#	import profile
+#	profile.run("main()",sort=1)
 	main()
+
 	print "total time:", time.time() - start
 	f.close()
 	fr.close()
-#	import profile
-#	profile.run("main()")
+#
 	#import pstats
 	#p = pstats.Stats('./pro_out')
 	#p.sort_stats("time").print_stats()
