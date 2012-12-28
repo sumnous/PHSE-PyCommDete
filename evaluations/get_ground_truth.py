@@ -29,3 +29,4 @@ def get_result(fn):
 		result.append(x.nodes())
 	print "result is:", result, "\n num of communities of R: ", len(result)
 	return result
+

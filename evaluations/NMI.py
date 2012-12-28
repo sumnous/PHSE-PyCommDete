@@ -3,11 +3,11 @@
 # karate ground truth:
 # [1,2,3,4,5,6,7,8,11,12,13,14,17,18,20,22],[9,10,15,16,19,21,23,24,25,26,27,28,29,30,31,32,33,34]
 
-import numpy
 from numpy import *
 from scipy import *
-from math import log
 from get_ground_truth import *
+from evaluations.get_ground_truth import get_result
+
 
 #Mutual information
 #def mutual_info(x,y):
@@ -28,7 +28,6 @@ def confusion_matrix(x,y):
 #Normalized mutual information
 def nmi(x,y):
 	N = get_num_nodes(x)
-
 	CM = confusion_matrix(x,y)
 
 	def get_A():
@@ -72,6 +71,7 @@ if __name__=="__main__":
 #	Ground_truth = [[1,2,3],[4,5,6]]
 #	Result = [[1,2,3,4],[2,4,5,6]]
 
+
 	#test karate nmi=0.546086186904
 #	Ground_truth = [[1,2,3,4,5,6,7,8,11,12,13,14,17,18,20,22],\
 #	                [9,10,15,16,19,21,23,24,25,26,27,28,29,30,31,32,33,34]]
@@ -82,6 +82,7 @@ if __name__=="__main__":
 	Ground_truth = get_ground_truth('../benchmarks/community.dat')
 	Result = get_result('../result.dat')
 	print "nmi is: ", nmi(Ground_truth,Result)
+
 
 #	confusion_matrix(Ground_truth,Result)
 

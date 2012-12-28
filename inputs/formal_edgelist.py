@@ -2,6 +2,7 @@
 def formal_edgelist(fname):
     f = file(fname, 'r')
     f_write = file('./inputs/network.edgelist', 'w+')
+
     edgelist=[]
     for x in f:
         # x = x[:-1].split(' ')

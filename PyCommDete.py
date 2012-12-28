@@ -22,6 +22,7 @@ elif input_type==2:
 if len(C) >= 1000:
 	len_max = len(C)*0.1
 
+
 def get_maximum_cliques(network):
 	# find the maximum cliques in network C, clique's nodes are over 2.
 	# http://networkx.lanl.gov/reference/algorithms.clique.html
@@ -30,6 +31,7 @@ def get_maximum_cliques(network):
 	print "_________len", len(cl_over_2)
 	seeds = deal_cliques(cl_over_2)
 	print ":::::::::::",seeds
+
 
 	count_len = [len(x) for x in seeds]
 
@@ -46,6 +48,7 @@ def get_maximum_cliques(network):
 
 	print "MinSeedSize: ", MinSeedSize
 	seeds = [x for x in seeds if len(x) >= MinSeedSize]
+
 	print "seeds:\n", seeds
 	print "number of seeds for computing: ", len(seeds)
 	return seeds
@@ -59,6 +62,7 @@ def deal_cliques(cliques):
 
 def deal_cliques_once(cliques):
 	"""return a list containing cliques"""
+
 	le = len(cliques)
 	if le == 0:
 		return []
@@ -81,6 +85,7 @@ def deal_cliques_once(cliques):
 				break
 
 		remain=[i for i,e in enumerate(bitmap) if e==0]
+
 
 		def c_match(current_list, c):
 			x = set(cliques[c])
@@ -279,6 +284,7 @@ def get_all_nature_community(cliques):
 		single_node_Graph = nx.Graph(C.subgraph(seed_clique))
 #		single_node_Graph.add_node(seed_node)
 		single_node_Graph = get_nature_community_short(single_node_Graph)
+
 		sngn = single_node_Graph.nodes()
 		print "seed_community: ", sngn
 		communities.append(single_node_Graph)
@@ -293,6 +299,7 @@ def get_all_nature_community(cliques):
 	print "finish get all communities"
 	communities = deal_communities(communities)
 	print "complete deal_communities"
+
 	return communities
 
 def deal_communities(communities):
@@ -316,6 +323,7 @@ def deal_communities(communities):
 		for x in com:
 			if len(x)> len(item) and set(item).issubset(set(x.nodes())):
 				return True
+
 		return False
 
 	bitmap=[0]*len(communities)
@@ -337,6 +345,7 @@ def get_communities_overlapping_degree(community1, community2):
 	else:
 		cod = beta*len(val_o) / len(val_m) +\
 		      (1-beta)*len(get_overlapping_nodes(nei1, nei2)) / len(get_merging_nodes(nei1, nei2))
+
 	return cod
 
 def compare_communities(community1_nodes, community2_nodes):
@@ -420,6 +429,7 @@ def merge_all_communities(communities):
 			y = communities[j]
 
 			cod = get_communities_overlapping_degree(x, y)
+
 			def is_subset(a,b):
 				if len(a)>len(b):
 					return False
@@ -455,7 +465,6 @@ def merge_all_communities(communities):
 
 def main():
 	import sys
-	#	print "syaargv0 is", sys.argv[0]
 	global alpha,beta,gama,avg_type
 
 	if len(sys.argv) > 2:
@@ -468,6 +477,7 @@ def main():
 	cliques = get_maximum_cliques(C)
 	communities = get_all_nature_community(cliques)
 
+
 	# 合并
 	results = merge_all_communities(communities)
 
@@ -478,6 +488,7 @@ def main():
 		print "i = ", i, ":" , sorted(x.nodes())
 		i += 1
 	overlapping_nodes = set([])
+
 	communities = [set(x) for x in communities]
 	for x in communities:
 		for y in communities[communities.index(x)+1:]:
@@ -501,3 +512,4 @@ def main():
 #	#import pstats
 #	#p = pstats.Stats('./pro_out')
 #	#p.sort_stats("time").print_stats()
+
