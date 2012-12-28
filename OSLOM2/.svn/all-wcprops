@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2
+END
+copra.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/copra.jar
+END
+clusters-network_o.dat
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/clusters-network_o.dat
+END
+infomap_net.clu
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/infomap_net.clu
+END
+infomap_net_map.net
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/infomap_net_map.net
+END
+labelconsec.dat
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/labelconsec.dat
+END
+network.tree
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/network.tree
+END
+oslom_dir
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/oslom_dir
+END
+infomap_dir
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/infomap_dir
+END
+compile_all.sh
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/compile_all.sh
+END
+oslo_network_h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/oslo_network_h
+END
+infomap_net.tree
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/infomap_net.tree
+END
+clusters-oslo_network_h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/clusters-oslo_network_h
+END
+infomap.part
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/infomap.part
+END
+network.bin
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/network.bin
+END
+louvain_script
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/louvain_script
+END
+pajek_write_dir
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/pajek_write_dir
+END
+example.dat
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/example.dat
+END
+clusters-network.dat
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/clusters-network.dat
+END
+clusters-example.dat
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/clusters-example.dat
+END
+ReadMe.pdf
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/ReadMe.pdf
+END
+infomap_net.map
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/infomap_net.map
+END
+infomap_dir_script
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/infomap_dir_script
+END
+example.dat_oslo_files_list
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/example.dat_oslo_files_list
+END
+infomap_undir_script
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/infomap_undir_script
+END
+hierarchy
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/hierarchy
+END
+convert
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/convert
+END
+louvain.part
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/louvain.part
+END
+tp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/tp
+END
+leve1.dat
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/leve1.dat
+END
+infomap_net.net
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/infomap_net.net
+END
+community
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/community
+END
+netconsec.dat
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/netconsec.dat
+END
+oslom_undir
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/oslom_undir
+END
+infomap_undir
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/infomap_undir
+END
+pajek_write_undir
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/pajek_write_undir
+END
+time_seed.dat
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/time_seed.dat
+END
+infomap_net_map.vec
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/infomap_net_map.vec
+END
+labels.dat
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/labels.dat
+END
+network_o.dat
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/network_o.dat
+END

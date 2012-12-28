@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/Sources
+END
+set_parameters.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/Sources/set_parameters.cpp
+END
+random.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/Sources/random.cpp
+END
+histograms.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/Sources/histograms.cpp
+END
+standard_include.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/Sources/standard_include.cpp
+END
+cast.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/Sources/cast.cpp
+END
+benchm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/Sources/benchm.cpp
+END
+print.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/Sources/print.cpp
+END
+combinatorics.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/Sources/combinatorics.cpp
+END

@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/standard_package
+END
+random.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/standard_package/random.cpp
+END
+histograms.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/standard_package/histograms.cpp
+END
+standard_include.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/standard_package/standard_include.cpp
+END
+deque_numeric.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/standard_package/deque_numeric.cpp
+END
+tabdeg.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/standard_package/tabdeg.cpp
+END
+mutual.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/standard_package/mutual.cpp
+END
+update.dat
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/standard_package/update.dat
+END
+partition.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/standard_package/partition.cpp
+END
+pajek.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/standard_package/pajek.cpp
+END
+cast.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/standard_package/cast.cpp
+END
+print.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/standard_package/print.cpp
+END
+combinatorics.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/standard_package/combinatorics.cpp
+END

@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir
+END
+infomap.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir/infomap.h
+END
+GreedyBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir/GreedyBase.h
+END
+infomap_scr.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir/infomap_scr.cpp
+END
+Greedy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir/Greedy.cc
+END
+MersenneTwister.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir/MersenneTwister.h
+END
+Greedy.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir/Greedy.h
+END
+source-sink.net
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir/source-sink.net
+END
+Node.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir/Node.cc
+END
+labels.dat
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir/labels.dat
+END
+Node.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir/Node.h
+END
+flow.net
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir/flow.net
+END
+infomap.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir/infomap.cc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir/Makefile
+END
+GreedyBase.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_dir/GreedyBase.cc
+END

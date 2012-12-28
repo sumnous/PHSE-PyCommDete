@@ -1,0 +1,37 @@
+setting... -N 5000
+setting... -k 20
+setting... -maxk 50
+setting... -mu 0.1
+setting... -t1 2
+setting... -t2 1
+setting... -minc 10
+setting... -maxc 50
+setting... -on 500
+setting... -om 5
+
+**************************************************************
+number of nodes:	5000
+average degree:	20
+maximum degree:	50
+exponent for the degree distribution:	2
+exponent for the community size distribution:	1
+mixing parameter:	0.1
+number of overlapping nodes:	500
+number of memberships of the overlapping nodes:	5
+community size range set equal to [10 , 50]
+**************************************************************
+
+building communities... 
+connecting communities... 
+recording network...
+
+
+---------------------------------------------------------------------------
+network of 5000 vertices and 48017 edges;	 average degree = 19.2068
+
+average mixing parameter: 0.10194 +/- 0.0265091
+p_in: 0.5454	p_out: 0.00168202
+
+
+i =5: 
+mutual3:	0.777379

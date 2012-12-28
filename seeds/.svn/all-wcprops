@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2/trunk/%20py-community-detection/seeds
+END
+seeds_cliques.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2/trunk/%20py-community-detection/seeds/seeds_cliques.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2/trunk/%20py-community-detection/seeds/__init__.py
+END
+seeds_degrees.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2/trunk/%20py-community-detection/seeds/seeds_degrees.py
+END
+seeds_betweeness.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2/trunk/%20py-community-detection/seeds/seeds_betweeness.py
+END

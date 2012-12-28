@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_undir
+END
+infomap.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_undir/infomap.h
+END
+GreedyBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_undir/GreedyBase.h
+END
+infomap_scr.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_undir/infomap_scr.cpp
+END
+Greedy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_undir/Greedy.cc
+END
+MersenneTwister.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_undir/MersenneTwister.h
+END
+Greedy.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_undir/Greedy.h
+END
+Node.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_undir/Node.cc
+END
+Node.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_undir/Node.h
+END
+karate.net
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_undir/karate.net
+END
+infomap.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_undir/infomap.cc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_undir/Makefile
+END
+GreedyBase.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/infomap_undir/GreedyBase.cc
+END

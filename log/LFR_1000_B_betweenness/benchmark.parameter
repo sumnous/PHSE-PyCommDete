@@ -1,0 +1,219 @@
+g++ -o benchmark main.cpp
+
+
+
+reading parameters.dat...
+
+**************************************************************
+number of nodes:	1000
+average degree:	20
+maximum degree:	50
+exponent for the degree distribution:	1
+exponent for the community size distribution:	1
+mixing parameter:	0.5
+community size range set equal to [20 , 100]
+**************************************************************
+
+-----------------------------------------------------------
+network of 1000 vertices and 10041 edges;	 average degree = 20.082
+average mixing parameter: 0.499236 +/- 0.0291985
+p_in: 0.229651	p_out: 0.0107135
+
+
+g++ -o benchmark main.cpp
+
+
+
+reading parameters.dat...
+
+**************************************************************
+number of nodes:	1000
+average degree:	20
+maximum degree:	50
+exponent for the degree distribution:	1
+exponent for the community size distribution:	1
+mixing parameter:	0.55
+community size range set equal to [20 , 100]
+**************************************************************
+
+-----------------------------------------------------------
+network of 1000 vertices and 10029 edges;	 average degree = 20.058
+average mixing parameter: 0.550342 +/- 0.0372407
+p_in: 0.239603	p_out: 0.0113738
+
+
+g++ -o benchmark main.cpp
+
+
+
+reading parameters.dat...
+
+**************************************************************
+number of nodes:	1000
+average degree:	20
+maximum degree:	50
+exponent for the degree distribution:	1
+exponent for the community size distribution:	1
+mixing parameter:	0.6
+community size range set equal to [20 , 100]
+**************************************************************
+
+-----------------------------------------------------------
+network of 1000 vertices and 9998 edges;	 average degree = 19.996
+average mixing parameter: 0.599428 +/- 0.0389094
+p_in: 0.188429	p_out: 0.0127113
+
+
+g++ -o benchmark main.cpp
+
+
+
+reading parameters.dat...
+
+**************************************************************
+number of nodes:	1000
+average degree:	20
+maximum degree:	50
+exponent for the degree distribution:	1
+exponent for the community size distribution:	1
+mixing parameter:	0.65
+community size range set equal to [20 , 100]
+**************************************************************
+
+-----------------------------------------------------------
+network of 1000 vertices and 10545 edges;	 average degree = 21.09
+average mixing parameter: 0.650774 +/- 0.0340493
+p_in: 0.194528	p_out: 0.0145362
+
+
+g++ -o benchmark main.cpp
+
+
+
+reading parameters.dat...
+
+**************************************************************
+number of nodes:	1000
+average degree:	20
+maximum degree:	50
+exponent for the degree distribution:	1
+exponent for the community size distribution:	1
+mixing parameter:	0.7
+community size range set equal to [20 , 100]
+**************************************************************
+
+-----------------------------------------------------------
+network of 1000 vertices and 10138 edges;	 average degree = 20.276
+average mixing parameter: 0.699833 +/- 0.0359297
+p_in: 0.171539	p_out: 0.0147601
+
+
+g++ -o benchmark main.cpp
+
+
+
+reading parameters.dat...
+
+**************************************************************
+number of nodes:	1000
+average degree:	20
+maximum degree:	50
+exponent for the degree distribution:	1
+exponent for the community size distribution:	1
+mixing parameter:	0.75
+community size range set equal to [20 , 100]
+**************************************************************
+
+-----------------------------------------------------------
+network of 1000 vertices and 10426 edges;	 average degree = 20.852
+average mixing parameter: 0.749968 +/- 0.0359629
+p_in: 0.121868	p_out: 0.0164725
+
+
+g++ -o benchmark main.cpp
+
+
+
+reading parameters.dat...
+
+**************************************************************
+number of nodes:	1000
+average degree:	20
+maximum degree:	50
+exponent for the degree distribution:	1
+exponent for the community size distribution:	1
+mixing parameter:	0.8
+community size range set equal to [20 , 100]
+**************************************************************
+
+-----------------------------------------------------------
+network of 1000 vertices and 10015 edges;	 average degree = 20.03
+average mixing parameter: 0.801994 +/- 0.0371983
+p_in: 0.0865197	p_out: 0.0170408
+
+
+g++ -o benchmark main.cpp
+
+
+
+reading parameters.dat...
+
+**************************************************************
+number of nodes:	1000
+average degree:	20
+maximum degree:	50
+exponent for the degree distribution:	1
+exponent for the community size distribution:	1
+mixing parameter:	0.85
+community size range set equal to [20 , 100]
+**************************************************************
+
+-----------------------------------------------------------
+network of 1000 vertices and 10067 edges;	 average degree = 20.134
+average mixing parameter: 0.851193 +/- 0.0324936
+p_in: 0.0623167	p_out: 0.0182779
+
+
+g++ -o benchmark main.cpp
+
+
+
+reading parameters.dat...
+
+**************************************************************
+number of nodes:	1000
+average degree:	20
+maximum degree:	50
+exponent for the degree distribution:	1
+exponent for the community size distribution:	1
+mixing parameter:	0.9
+community size range set equal to [20 , 100]
+**************************************************************
+
+-----------------------------------------------------------
+network of 1000 vertices and 10058 edges;	 average degree = 20.116
+average mixing parameter: 0.899545 +/- 0.0363887
+p_in: 0.0574642	p_out: 0.0189028
+
+
+g++ -o benchmark main.cpp
+
+
+
+reading parameters.dat...
+
+**************************************************************
+number of nodes:	1000
+average degree:	20
+maximum degree:	50
+exponent for the degree distribution:	1
+exponent for the community size distribution:	1
+mixing parameter:	0.95
+community size range set equal to [20 , 100]
+**************************************************************
+
+-----------------------------------------------------------
+network of 1000 vertices and 10127 edges;	 average degree = 20.254
+average mixing parameter: 0.949601 +/- 0.0405118
+p_in: 0.0191091	p_out: 0.0208525
+

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_LFR_OC_UU/Sources
+END
+set_parameters.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_LFR_OC_UU/Sources/set_parameters.cpp
+END
+random.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_LFR_OC_UU/Sources/random.cpp
+END
+histograms.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_LFR_OC_UU/Sources/histograms.cpp
+END
+standard_include.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_LFR_OC_UU/Sources/standard_include.cpp
+END
+cast.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_LFR_OC_UU/Sources/cast.cpp
+END
+benchm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_LFR_OC_UU/Sources/benchm.cpp
+END
+print.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_LFR_OC_UU/Sources/print.cpp
+END
+combinatorics.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_LFR_OC_UU/Sources/combinatorics.cpp
+END

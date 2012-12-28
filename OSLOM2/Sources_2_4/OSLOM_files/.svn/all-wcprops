@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files
+END
+directed_oslomnet_evaluate.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/directed_oslomnet_evaluate.h
+END
+louvain_oslomnet_dir.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/louvain_oslomnet_dir.h
+END
+main_body.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/main_body.cpp
+END
+directed_network.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/directed_network.h
+END
+undirected_oslomnet_evaluate.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/undirected_oslomnet_evaluate.h
+END
+louvain_oslomnet.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/louvain_oslomnet.h
+END
+undirected_network.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/undirected_network.h
+END
+module_collection.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/module_collection.h
+END
+dir_weighted_tabdeg.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/dir_weighted_tabdeg.h
+END
+try_homeless_dir.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/try_homeless_dir.cpp
+END
+undir_weighted_tabdeg.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/undir_weighted_tabdeg.h
+END
+try_homeless_undir.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/try_homeless_undir.cpp
+END
+set_parameters.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/set_parameters.h
+END
+oslom_net_global.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/oslom_net_global.h
+END
+oslom_net_check_overlap.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/oslom_net_check_overlap.cpp
+END
+main_directed.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/main_directed.cpp
+END
+egocentric_undir.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/egocentric_undir.h
+END
+main_undirected.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/main_undirected.cpp
+END
+oslom_net_unions.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/oslom_net_unions.cpp
+END
+hierarchies.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/hierarchies.h
+END
+log_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/log_table.h
+END
+wsarray.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/OSLOM_files/wsarray.h
+END

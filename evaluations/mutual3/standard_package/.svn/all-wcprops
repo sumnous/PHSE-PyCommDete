@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/standard_package
+END
+random.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/standard_package/random.cpp
+END
+histograms.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/standard_package/histograms.cpp
+END
+standard_include.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/standard_package/standard_include.cpp
+END
+deque_numeric.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/standard_package/deque_numeric.cpp
+END
+mutual.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/standard_package/mutual.cpp
+END
+update.dat
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/standard_package/update.dat
+END
+partition.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/standard_package/partition.cpp
+END
+cast.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/standard_package/cast.cpp
+END
+print.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/standard_package/print.cpp
+END
+combinatorics.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/standard_package/combinatorics.cpp
+END

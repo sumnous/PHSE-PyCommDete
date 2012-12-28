@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/30/trunk/%20py-community-detection/inputs
+END
+ka_gephi.gephi
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/ka_gephi.gephi
+END
+karate_club.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/karate_club.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/__init__.py
+END
+karate.edgelist
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/karate.edgelist
+END
+formal_edgelist.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/formal_edgelist.py
+END
+network.edgelist
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/30/trunk/%20py-community-detection/inputs/network.edgelist
+END
+erdos_renyi.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/erdos_renyi.py
+END
+__init__.pyc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/8/trunk/%20py-community-detection/inputs/__init__.pyc
+END
+football.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/30/trunk/%20py-community-detection/inputs/football.py
+END
+formal_edgelist.pyc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/8/trunk/%20py-community-detection/inputs/formal_edgelist.pyc
+END
+dolphin.edgelist
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/dolphin.edgelist
+END

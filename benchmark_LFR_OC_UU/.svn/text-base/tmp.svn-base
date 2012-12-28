@@ -1,0 +1,46 @@
+2	"""
+3	Load football network in GML format and compute some network statistcs.
+4	
+5	Shows how to download GML graph in a zipped file, unpack it, and load
+6	into a NetworkX graph.
+7	
+8	Requires Internet connection to download the URL
+9	http://www-personal.umich.edu/~mejn/netdata/football.zip
+10	
+11	"""
+12	__author__ = """Aric Hagberg (hagberg@lanl.gov)"""
+13	#    Copyright (C) 2007 by
+14	#    Aric Hagberg <hagberg@lanl.gov>
+15	#    Dan Schult <dschult@colgate.edu>
+16	#    Pieter Swart <swart@lanl.gov>
+17	#    All rights reserved.
+18	#    BSD license.
+19
+20	try:
+21	    import pyparsing
+22	except ImportError,e:
+23	    raise ImportError(str(e)+". Check http://pyparsing.wikispaces.com/")
+24
+25	from networkx import *
+26
+27	url="http://www-personal.umich.edu/~mejn/netdata/football.zip"
+28
+29	import urllib
+30	import StringIO
+31	import zipfile
+32
+33	sock = urllib.urlopen(url)  # open URL
+34	s=StringIO.StringIO(sock.read()) # read into StringIO "file"
+35	sock.close()
+36
+37	zf = zipfile.ZipFile(s) # zipfile object
+38	txt=zf.read('football.txt') # read info file
+39	gml=zf.read('football.gml') # read gml data
+40	# throw away bogus first line with # from mejn files
+41	gml=gml.split('\n')[1:]
+42	G=parse_gml(gml) # parse gml data
+43
+44	print txt
+45	# print degree for each team - number of games
+46	for n,d in G.degree_iter():
+47	    print n,d

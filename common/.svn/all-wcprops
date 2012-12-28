@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/27/trunk/%20py-community-detection/common
+END
+transform.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/27/trunk/%20py-community-detection/common/transform.py
+END
+clustering.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2/trunk/%20py-community-detection/common/clustering.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2/trunk/%20py-community-detection/common/__init__.py
+END

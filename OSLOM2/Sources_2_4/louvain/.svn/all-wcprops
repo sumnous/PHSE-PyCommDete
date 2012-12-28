@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain
+END
+graph.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/graph.cpp
+END
+a.out
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/a.out
+END
+graph_binary.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/graph_binary.cpp
+END
+static_network.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/static_network.h
+END
+graph.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/graph.h
+END
+graph_binary.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/graph_binary.h
+END
+order.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/order.cpp
+END
+script_to_compile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/script_to_compile.cpp
+END
+list_out
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/list_out
+END
+main_hierarchy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/main_hierarchy.cpp
+END
+community.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/community.cpp
+END
+main_convert.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/main_convert.cpp
+END
+main_community.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/main_community.cpp
+END
+graph_binary_linux.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/graph_binary_linux.h
+END
+community.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/community.h
+END
+graph_binary_mac.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/graph_binary_mac.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/Makefile
+END
+wsarray.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/31/trunk/%20py-community-detection/OSLOM2/Sources_2_4/louvain/wsarray.h
+END

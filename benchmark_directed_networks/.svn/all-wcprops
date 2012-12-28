@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks
+END
+gpl.txt
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/gpl.txt
+END
+network.dat
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/network.dat
+END
+statistics.dat
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/statistics.dat
+END
+flags.dat
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/flags.dat
+END
+time_seed.dat
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/time_seed.dat
+END
+Thanks.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/Thanks.txt
+END
+benchmark
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/benchmark
+END
+community.dat
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/community.dat
+END
+ReadMe.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/ReadMe.txt
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmark_directed_networks/makefile
+END

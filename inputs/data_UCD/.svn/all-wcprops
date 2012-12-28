@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD
+END
+test_moses.edgelist
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/test_moses.edgelist
+END
+irishblogs_postlink.edgelist
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/irishblogs_postlink.edgelist
+END
+erdos_renyi1.gephi
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/erdos_renyi1.gephi
+END
+netscience.gml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/netscience.gml
+END
+watts_strogatz50.gephi
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/watts_strogatz50.gephi
+END
+erdos_renyi2.gephi
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/erdos_renyi2.gephi
+END
+irishblogs_blogroll.edgelist
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/irishblogs_blogroll.edgelist
+END
+test_moses.comms
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/test_moses.comms
+END
+erdos_renyi1.edgelist
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/erdos_renyi1.edgelist
+END
+karate.gephi
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/karate.gephi
+END
+erdos_renyi2.edgelist
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/erdos_renyi2.edgelist
+END
+watts_strogatz50.edgelist
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/watts_strogatz50.edgelist
+END
+cliques.edgelist
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/cliques.edgelist
+END
+karate.edgelist
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/karate.edgelist
+END
+netscience.gephi
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/netscience.gephi
+END
+karate_clustered.gephi
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/karate_clustered.gephi
+END
+test.adj
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/test.adj
+END
+centrality.edgelist
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/centrality.edgelist
+END
+test.edgelist
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/2/trunk/%20py-community-detection/inputs/data_UCD/test.edgelist
+END

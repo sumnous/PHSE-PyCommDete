@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmarks
+END
+base.dat
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmarks/base.dat
+END
+bench_seed.dat
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23/trunk/%20py-community-detection/benchmarks/bench_seed.dat
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/12/trunk/%20py-community-detection/benchmarks/__init__.py
+END
+benchmark
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/14/trunk/%20py-community-detection/benchmarks/benchmark
+END
+community.dat
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23/trunk/%20py-community-detection/benchmarks/community.dat
+END
+gpl.txt
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/14/trunk/%20py-community-detection/benchmarks/gpl.txt
+END
+network.dat
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23/trunk/%20py-community-detection/benchmarks/network.dat
+END
+tail.dat
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmarks/tail.dat
+END
+statistics.dat
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23/trunk/%20py-community-detection/benchmarks/statistics.dat
+END
+benchmark.pdf
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2/trunk/%20py-community-detection/benchmarks/benchmark.pdf
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/14/trunk/%20py-community-detection/benchmarks/main.cpp
+END
+parameters.dat.back
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/22/trunk/%20py-community-detection/benchmarks/parameters.dat.back
+END
+parameters.dat
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmarks/parameters.dat
+END
+ReadMe.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/20/trunk/%20py-community-detection/benchmarks/ReadMe.txt
+END
+run.sh
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/30/trunk/%20py-community-detection/benchmarks/run.sh
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/14/trunk/%20py-community-detection/benchmarks/makefile
+END

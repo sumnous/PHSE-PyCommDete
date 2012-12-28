@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23/trunk/%20py-community-detection/evaluations/mutual3
+END
+two.dat
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/two.dat
+END
+nmi.log
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/nmi.log
+END
+result.dat
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/23/trunk/%20py-community-detection/evaluations/mutual3/result.dat
+END
+true.dat
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23/trunk/%20py-community-detection/evaluations/mutual3/true.dat
+END
+mutual
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/mutual
+END
+parameters.dat
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/parameters.dat
+END
+mutual3.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/mutual3.cpp
+END
+ReadMe.txt
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/ReadMe.txt
+END
+true_karate.dat
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/true_karate.dat
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/22/trunk/%20py-community-detection/evaluations/mutual3/makefile
+END

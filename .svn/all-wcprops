@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/31/trunk/%20py-community-detection
+END
+multi.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/%20py-community-detection/multi.py
+END
+SeedDrivenDete.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/30/trunk/%20py-community-detection/SeedDrivenDete.py
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/4/trunk/%20py-community-detection/.project
+END
+result.dat
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/17/trunk/%20py-community-detection/result.dat
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/%20py-community-detection/__init__.py
+END
+betweenness_centrality.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23/trunk/%20py-community-detection/betweenness_centrality.py
+END
+weibo_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/30/trunk/%20py-community-detection/weibo_test.py
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/%20py-community-detection/README.md
+END
+config.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/31/trunk/%20py-community-detection/config.py
+END
+.pydevproject
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/17/trunk/%20py-community-detection/.pydevproject
+END
+PyCommDete.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/30/trunk/%20py-community-detection/PyCommDete.py
+END
