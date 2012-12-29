@@ -1,7 +1,10 @@
 # -*- coding: utf8 -*-
+
+from config import *
+
 def formal_edgelist(fname):
     f = file(fname, 'r')
-    f_write = file('./inputs/network.edgelist', 'w+')
+    f_write = file(base +'/inputs/network.edgelist', 'w+')
 
     edgelist=[]
     for x in f:

@@ -124,10 +124,10 @@ if __name__ == "__main__":
 	if input_type==1:
 		C = nx.read_gml(filelist[file_num])
 	elif input_type==2:
-		C = nx.Graph(formal_edgelist('./benchmark_LFR_OC_UU/network.dat'))
+		C = nx.Graph(formal_edgelist(base +'/benchmark_LFR_OC_UU/network.dat'))
 		# get true.dat
-		f = file('./benchmark_LFR_OC_UU/community.dat', 'r')
-		fw = file('./evaluations/mutual3/true.dat','w+')
+		f = file(base +'/benchmark_LFR_OC_UU/community.dat', 'r')
+		fw = file(base +'/evaluations/mutual3/true.dat','w+')
 		d={}
 		for line in f:
 			kx = line.strip().split('\t')
@@ -197,7 +197,7 @@ if __name__ == "__main__":
 	print "commplete get_all_nature_community"
 	results = merge_all_communities(communities)
 
-	f = file('./evaluations/mutual3/result.dat', 'w+')
+	f = file(base +'/evaluations/mutual3/result.dat', 'w+')
 	for line in results:
 		content = " ".join([str(x) for x in line])
 		f.write(content)

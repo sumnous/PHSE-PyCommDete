@@ -10,17 +10,21 @@ from multiprocessing import Process, Pool
 from inputs.formal_edgelist import *
 from SeedDrivenDete import *
 
-filelist=['./inputs/GML/polbooks.gml',\
-          './inputs/GML/karate.gml',\
-          './inputs/GML/dolphins.gml',\
-          './inputs/GML/netscience.gml']
+
+filelist=[base +'/inputs/GML/polbooks.gml',\
+          base +'/inputs/GML/karate.gml',\
+          base +'/inputs/GML/dolphins.gml',\
+          base +'/inputs/GML/netscience.gml']
 if input_type==1:
 	C = nx.read_gml(filelist[file_num])
 elif input_type==2:
-	C = nx.Graph(formal_edgelist('./benchmark_LFR_OC_UU/network.dat'))
+	C = nx.Graph(formal_edgelist(base +'/benchmark_LFR_OC_UU/network.dat'))
 
-if len(C) >= 1000:
-	len_max = len(C)*0.1
+len_C = len(C)
+
+len_max = len_C
+if len_C >= 1000:
+	len_max = len_C*0.1
 
 
 def get_maximum_cliques(network):
@@ -156,11 +160,10 @@ def get_fitness(Graph):
 #	return (r[0], fitness_v_community_value)
 
 def get_nature_community_short(Graph):
-	if len(Graph) > len_max:
+	if len(Graph) >= len_max:
 		return C
 	g_fitness = get_fitness(Graph)
 	g_nodes=Graph.nodes()
-	v_fitness=[]
 	nei = get_neighbors(Graph)
 	if len(nei) == 0:
 		return Graph
@@ -231,7 +234,7 @@ def get_nature_community(Graph):
 		return Graph
 
 def process_f(cli_list):
-	lec = len(C)
+	lec = len_C
 	r = map(get_nature_community_short, [nx.Graph(C.subgraph(c)) for c in cli_list])
 #	print "origin len is", len(r)
 	nr = filter(lambda x: len(x)<lec, r)
@@ -299,7 +302,6 @@ def get_all_nature_community(cliques):
 	print "finish get all communities"
 	communities = deal_communities(communities)
 	print "complete deal_communities"
-
 	return communities
 
 def deal_communities(communities):
