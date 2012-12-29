@@ -60,12 +60,9 @@ def get_all_nature_community_GCE(cliques):
     return communities
 
 def distance_percent_non_embedded(comm1, comm2):
-    print "comm1_len: ", len(comm1)
     jointed = set(comm1).intersection(set(comm2))
-    print "jointed: ",len(jointed)
-    print "min of comm: ", min(len(comm1),len(comm2))
     distance = 1 - float(len(jointed)) / float(min(len(comm1), len(comm2)))
-    print "distance:", distance
+#    print "distance:", distance
     return distance
 
 def deal_communities_with_distance(communities):
