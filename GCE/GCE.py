@@ -5,17 +5,44 @@ from PyCommDete import *
 from config import *
 from inputs.formal_edgelist import *
 
-dis_threshold = 0.25 #small than dis_threshold, then delete this community
-communities = [[1,2,3,4,5],[2,3,4,5,6],[2,3,4,5,6,7]]
-
 def find_maximum_clique_GCE(network):
     # find the maximum cliques in network C, clique's nodes are over 4.
     # http://networkx.lanl.gov/reference/algorithms.clique.html
     cl = [x for x in nx.find_cliques(network)]
-    seeds = filter(lambda x:len(x)>=4, cl)
+    cl_over_4 = filter(lambda x:len(x)>=4, cl)
+    seeds = deal_seeds_GCE(cl_over_4)
+    import sys
     print "seeds:\n", seeds
     print "number of seeds for computing: ", len(seeds)
+    exit(0)
     return seeds
+
+def deal_seeds_GCE(cliques):
+    print cliques
+    cliques.sort(key=lambda x:len(x), reverse=True)
+    print "after sorted: ",cliques
+    print "before num: ",len(cliques)
+    len_cli = len(cliques)
+    if len_cli > 2:
+        results = [cliques[0],cliques[1]]
+    else:
+        return cliques
+    def inter_perception(seed,non_seed):
+        inter_nodes = set(seed).intersection(set(non_seed))
+        percent = float(len(inter_nodes)) / float(len(non_seed))
+        return percent
+
+    for i in range(2,len_cli):
+        count = 0
+        for j in results:
+            if inter_perception(j,cliques[i]) >= 1-cch_threshold:
+                count += 1
+            if count >= 2:
+                break
+        if count < 2:
+            results.append(cliques[i])
+
+    return results
 
 def get_all_nature_community_GCE(cliques):
     pool_result = []

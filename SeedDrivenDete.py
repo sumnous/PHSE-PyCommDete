@@ -4,6 +4,7 @@ from common.transform import *
 from PyCommDete import *
 from networkx import nx
 from inputs.formal_edgelist import *
+from GCE.GCE import *
 
 from multiprocessing import Pool 
 from sys import exit
@@ -31,7 +32,7 @@ def get_all_nodes_by_degree(netw, d_threshold=0, min_distance=1):
 					nei_nei = [netw.neighbors(n).remove(i) for n in nei if btmap[n-1]]
 					map(lambda x:mark_zero(x, deep-1), nei_nei)
 	mark_zero([nd[0] for nd in node_degree], min_distance)
-	
+
 	return [node[0] for node in node_degree if btmap[node[0]-1]]
 
 def get_all_nodes(netw,seeds_type):
@@ -163,19 +164,11 @@ if __name__ == "__main__":
 	print cliques
 	print "len of cliques: ", len(cliques)
 
-	count_len = [len(x) for x in cliques]
-	if avg_type == 0:
-		MinSeedSize = 3
-	elif avg_type == 1:
-		MinSeedSize = 4
-	elif avg_type == 2:
-		MinSeedSize = sum(count_len)/len(cliques)
-	elif avg_type ==3:
-		ave = sum(count_len)/len(cliques)
-		sum_tem = sum(map(lambda x:pow((ave-x),2),count_len))
-		MinSeedSize = ave - pow(sum_tem/len(cliques),0.5)
-	cliques.sort(key=lambda x:len(x), reverse=True)
-	seeds = [x for x in cliques if len(x) >= MinSeedSize]
+	seeds = downsides_seeds(cliques)
+	print "downsides after:", seeds
+	print "number of downsided seeds:",len(seeds)
+	seeds = deal_seeds_GCE(seeds)
+
 	print "length of seeds: ", len(seeds)
 	print "seeds: ", seeds
 	#anlysis the cliques's fitness

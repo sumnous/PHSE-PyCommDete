@@ -21,6 +21,7 @@ elif input_type==2:
 	C = nx.Graph(formal_edgelist(base +'/benchmark_LFR_OC_UU/network.dat'))
 
 len_C = len(C)
+nodes_C = C.nodes()
 
 len_max = len_C
 if len_C >= 1000:
@@ -33,29 +34,33 @@ def get_maximum_cliques(network):
 	cl = [x for x in nx.find_cliques(network)]
 	cl_over_2 = filter(lambda x:len(x)>2, cl)
 	print "_________len", len(cl_over_2)
-	seeds = deal_cliques(cl_over_2)
+#	seeds = deal_cliques(cl_over_2)
+	seeds = cl_over_2
 	print ":::::::::::",seeds
 
 
-	count_len = [len(x) for x in seeds]
-
-	if avg_type == 0:
-		MinSeedSize = 3
-	elif avg_type == 1:
-		MinSeedSize = 4
-	elif avg_type == 2:
-		MinSeedSize = sum(count_len)/len(seeds)
-	elif avg_type ==3:
-		ave = sum(count_len)/len(seeds)
-		sum_tem = sum(map(lambda x:pow((ave-x),2),count_len))
-		MinSeedSize = ave - pow(sum_tem/len(seeds),0.5)
-
-	print "MinSeedSize: ", MinSeedSize
-	seeds = [x for x in seeds if len(x) >= MinSeedSize]
+	seeds = downsides_seeds(seeds)
 
 	print "seeds:\n", seeds
 	print "number of seeds for computing: ", len(seeds)
 	return seeds
+
+def downsides_seeds(seeds):
+    count_len = [len(x) for x in seeds]
+    if avg_type == 0:
+        MinSeedSize = 3
+    elif avg_type == 1:
+        MinSeedSize = 4
+    elif avg_type == 2:
+        MinSeedSize = sum(count_len)/len(seeds)
+    elif avg_type ==3:
+        ave = sum(count_len)/len(seeds)
+        sum_tem = sum(map(lambda x:pow((ave-x),2),count_len))
+        MinSeedSize = ave - pow(sum_tem/len(seeds),0.5)
+#    cliques.sort(key=lambda x:len(x), reverse=True)
+    seeds = [x for x in seeds if len(x) >= MinSeedSize]
+    seeds.sort(key=lambda x:len(x), reverse = True)
+    return seeds
 
 def deal_cliques(cliques):
 	new_cliques = deal_cliques_once(cliques)
@@ -121,7 +126,7 @@ def get_neighbors(Graph):
 	for x in Graph.nodes():
 		flag[x]=0
 
-	return [x for x in C.nodes() if flag.get(x)]
+	return [x for x in nodes_C if flag.get(x)]
 
 def get_fitness(Graph):
 	"""compute the fitness of the graph"""
@@ -273,7 +278,7 @@ def get_all_nature_community(cliques):
 	for x in pool_result:
 		communities = communities+x.get()
 	print "finish process___________________"
-	all_nodes = C.nodes()
+	all_nodes = nodes_C
 	comm_nodes=[]
 	for x in communities:
 		comm_nodes = comm_nodes + x.nodes()
@@ -307,7 +312,7 @@ def get_all_nature_community(cliques):
 def deal_communities(communities):
 	# if there are some communities are the same, than delete
 	le = len(communities)
-	cnode_len = len(C.nodes())
+	cnode_len = len_C
 
 	bm=[0]*le
 	for i in range(le):
