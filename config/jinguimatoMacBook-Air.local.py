@@ -1,6 +1,3 @@
-__author__ = 'nourl'
-
-
 base="/Users/jingui/workspace/pycommdete"
 input_type = 2 #1:real gml; 2: benchmark
 file_num = 1 #0:polbooks;1:karate;2:dolphins;3:netscience
