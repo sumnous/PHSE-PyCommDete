@@ -1,5 +1,0 @@
-50000 	# number of nodes
-38	# average degree
-200	# maximum degree
-1	# exponent for the degree distribution (but, in this case, it does not matter)
-1	# exponent for the community size distribution (but, in this case, it does not matter)
