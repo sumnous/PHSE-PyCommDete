@@ -2,8 +2,11 @@ __author__ = 'wangting'
 
 import networkx as nx
 from PyCommDete import *
-from config import *
 from inputs.formal_edgelist import *
+from socket import gethostname
+
+hn=gethostname()
+exec("from config.%s import *" % hn)
 
 def find_maximum_clique_GCE(network):
     # find the maximum cliques in network C, clique's nodes are over 4.
@@ -11,10 +14,8 @@ def find_maximum_clique_GCE(network):
     cl = [x for x in nx.find_cliques(network)]
     cl_over_4 = filter(lambda x:len(x)>=4, cl)
     seeds = deal_seeds_GCE(cl_over_4)
-    import sys
     print "seeds:\n", seeds
     print "number of seeds for computing: ", len(seeds)
-    exit(0)
     return seeds
 
 def deal_seeds_GCE(cliques):
@@ -46,8 +47,7 @@ def deal_seeds_GCE(cliques):
 
 def get_all_nature_community_GCE(cliques):
     pool_result = []
-
-    from config import process_num
+    global process_num
     if len(cliques) < process_num:
         process_num = len(cliques)
 
@@ -140,40 +140,8 @@ def deal_communities_with_distance(communities):
 if __name__ == "__main__":
     import time
     start = time.time()
-    if input_type==1:
-        C = nx.read_gml(filelist[file_num])
-    elif input_type==2:
-        C = nx.Graph(formal_edgelist(base +'/benchmark_LFR_OC_UU/network.dat'))
-        # get true.dat
-        f = file(base +'/benchmark_LFR_OC_UU/community.dat', 'r')
-        fw = file(base +'/evaluations/mutual3/true.dat','w+')
-        d={}
-        for line in f:
-            kx = line.strip().split('\t')
-            kv = []
-            if ' ' in kx[1]:
-                kc = kx[1].strip().split(' ')
-                kv.append(int(kx[0]))
-                for x in kc:
-                    kv.append(int(x))
-            else:
-                kv =[int(kx[0]), int(kx[1])]
-            for kk in kv[1:]:
-                if d.get(kk):
-                    d[kk].append(kv[0])
-                else:
-                    d[kk]=[kv[0]]
-        ground_truth = []
-        for x in d:
-            ground_truth.append(d[x])
-        print "lens of ground_truth: ", len(ground_truth)
-        print "ground_truth is:", ground_truth
-        for line in ground_truth:
-            content = " ".join([str(x) for x in line])
-            fw.write(content)
-            fw.write('\n')
-        f.close()
-        fw.close()
+
+    C = input_type_fun(input_type)
 
     seeds = find_maximum_clique_GCE(C)
     print "length of seeds: ", len(seeds)

@@ -14,11 +14,6 @@ hn=gethostname()
 exec("from config.%s import *" % hn)
 
 
-
-filelist=[base +'/inputs/GML/polbooks.gml',\
-          base +'/inputs/GML/karate.gml',\
-          base +'/inputs/GML/dolphins.gml',\
-          base +'/inputs/GML/netscience.gml']
 if input_type==1:
 	C = nx.read_gml(filelist[file_num])
 elif input_type==2:
@@ -50,21 +45,21 @@ def get_maximum_cliques(network):
 	return seeds
 
 def downsides_seeds(seeds):
-    count_len = [len(x) for x in seeds]
-    if avg_type == 0:
-        MinSeedSize = 3
-    elif avg_type == 1:
-        MinSeedSize = 4
-    elif avg_type == 2:
-        MinSeedSize = sum(count_len)/len(seeds)
-    elif avg_type ==3:
-        ave = sum(count_len)/len(seeds)
-        sum_tem = sum(map(lambda x:pow((ave-x),2),count_len))
-        MinSeedSize = ave - pow(sum_tem/len(seeds),0.5)
+	count_len = [len(x) for x in seeds]
+	if avg_type == 0:
+		MinSeedSize = 3
+	elif avg_type == 1:
+		MinSeedSize = 4
+	elif avg_type == 2:
+		MinSeedSize = sum(count_len)/len(seeds)
+	elif avg_type ==3:
+		ave = sum(count_len)/len(seeds)
+		sum_tem = sum(map(lambda x:pow((ave-x),2),count_len))
+		MinSeedSize = ave - pow(sum_tem/len(seeds),0.5)
 #    cliques.sort(key=lambda x:len(x), reverse=True)
-    seeds = [x for x in seeds if len(x) >= MinSeedSize]
-    seeds.sort(key=lambda x:len(x), reverse = True)
-    return seeds
+	seeds = [x for x in seeds if len(x) >= MinSeedSize]
+	seeds.sort(key=lambda x:len(x), reverse = True)
+	return seeds
 
 def deal_cliques(cliques):
 	new_cliques = deal_cliques_once(cliques)
@@ -89,7 +84,7 @@ def deal_cliques_once(cliques):
 	current=[]
 	le = len(cliques)
 	bitmap=[0]*le
-	
+
 	while sum(bitmap) < le:
 		for i, e in enumerate(bitmap):
 			if e==0:
@@ -216,10 +211,10 @@ def get_nature_community(Graph):
 		return C
 	g_fitness = get_fitness(Graph)
 	g_nodes=Graph.nodes()
-	
+
 	v_fitness=[]
 	nei = get_neighbors(Graph)
-	
+
 	if len(nei) == 0:
 		return Graph
 
@@ -229,7 +224,7 @@ def get_nature_community(Graph):
 
 		if incr_fitness > 0:
 			v_fitness.append([v, incr_fitness])
-	
+
 	if len(v_fitness) > 0:
 		v_fitness.sort(key=lambda x:x[1], reverse=True)
 		extends_list = [x[0] for x in v_fitness if x[1] >= v_fitness[0][1]]
@@ -252,8 +247,7 @@ def process_f(cli_list):
 
 def get_all_nature_community(cliques):
 	pool_result = []
-	
-	from config import process_num
+	global process_num
 	if len(cliques) < process_num:
 		process_num = len(cliques)
 
@@ -355,7 +349,7 @@ def get_communities_overlapping_degree(community1, community2):
 		cod = len(val_o) / len(val_m)
 	else:
 		cod = beta*len(val_o) / len(val_m) +\
-		      (1-beta)*len(get_overlapping_nodes(nei1, nei2)) / len(get_merging_nodes(nei1, nei2))
+			  (1-beta)*len(get_overlapping_nodes(nei1, nei2)) / len(get_merging_nodes(nei1, nei2))
 
 	return cod
 
@@ -365,7 +359,7 @@ def compare_communities(community1_nodes, community2_nodes):
 
 	if len1 != len2:
 		return False
-	
+
 	i = 0
 	while i < len1:
 		if community1_nodes[i] != community2_nodes[i]:
