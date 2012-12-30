@@ -4,11 +4,15 @@ from __future__ import division
 import sys
 import networkx as nx
 
-from config import *
 from random import random
 from multiprocessing import Process, Pool
 from inputs.formal_edgelist import *
 from SeedDrivenDete import *
+from socket import gethostname
+
+hn=gethostname()
+exec("from config.%s import *" % hn)
+
 
 
 filelist=[base +'/inputs/GML/polbooks.gml',\
