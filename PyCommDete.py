@@ -44,7 +44,7 @@ def get_maximum_cliques(network):
 	print "number of seeds for computing: ", len(seeds)
 	return seeds
 
-def downsides_seeds(seeds):
+def downsides_seeds(seeds,avg_type = 1):
 	count_len = [len(x) for x in seeds]
 	if avg_type == 0:
 		MinSeedSize = 3

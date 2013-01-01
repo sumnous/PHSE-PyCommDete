@@ -43,6 +43,12 @@ def deal_seeds_GCE(cliques):
         if count < 2:
             results.append(cliques[i])
 
+    print "befor deal_cliques: ", len(results)
+    results = deal_cliques(results)
+    print "after deal_cliques: ",len(results)
+    results = downsides_seeds(results,2)
+    print "after downside to ave: ",len(results)
+
     return results
 
 def get_all_nature_community_GCE(cliques):
