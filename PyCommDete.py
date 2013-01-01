@@ -21,6 +21,8 @@ elif input_type==2:
 
 len_C = len(C)
 nodes_C = C.nodes()
+degree_dict = C.degree()
+betweenness_dict = nx.betweenness_centrality(C)
 
 len_max = len_C
 if len_C >= 1000:
@@ -283,20 +285,28 @@ def get_all_nature_community(cliques):
 	left_list = [x for x in all_nodes if x not in comm_nodes]
 
 	while len(left_list)>0:
-		seed_node = get_degree_max(left_list)
-		print "seed_node",seed_node
-		seed_clique = get_cliques(C, seed_node)
-#		print "seed_clique", seed_clique
-		single_node_Graph = nx.Graph(C.subgraph(seed_clique))
-#		single_node_Graph.add_node(seed_node)
-		single_node_Graph = get_nature_community_short(single_node_Graph)
+		single_seed_communities = get_single_seed_nature_community_once(left_list)
+		communities = communities+single_seed_communities
+		for comm in communities:
+			for x in comm.nodes():
+				if x in left_list:
+					left_list.remove(x)
 
-		sngn = single_node_Graph.nodes()
-		print "seed_community: ", sngn
-		communities.append(single_node_Graph)
-		for x in sngn:
-			if x in left_list:
-				left_list.remove(x)
+#	while len(left_list)>0:
+#		seed_node = get_degree_max(left_list)
+#		print "seed_node",seed_node
+#		seed_clique = get_cliques(C, seed_node)
+##		print "seed_clique", seed_clique
+#		single_node_Graph = nx.Graph(C.subgraph(seed_clique))
+##		single_node_Graph.add_node(seed_node)
+#		single_node_Graph = get_nature_community_short(single_node_Graph)
+#
+#		sngn = single_node_Graph.nodes()
+#		print "seed_community: ", sngn
+#		communities.append(single_node_Graph)
+#		for x in sngn:
+#			if x in left_list:
+#				left_list.remove(x)
 
 	i = 0
 	for x in communities:
@@ -306,6 +316,44 @@ def get_all_nature_community(cliques):
 	communities = deal_communities(communities)
 	print "complete deal_communities"
 	return communities
+
+def get_single_seed_nature_community_once(nodes):
+	global process_num
+	if len(nodes) >= process_num:
+		tem_list = get_betweenness_max_num(nodes,process_num)
+	else:
+		tem_list = get_betweenness_max_num(nodes, len(nodes))
+	cliques = get_all_cliques_by_nodes(C,tem_list)
+	pool_result = []
+	if len(cliques) < process_num:
+		process_num = len(cliques)
+	pool = Pool(process_num)
+	cli_len = len(cliques)
+	group_list = split_list(cliques, process_num)
+
+	for i in range(1, len(group_list), 2):
+		group_list[i].reverse()
+
+	for i in range(process_num):
+		args=[]
+		for gr in group_list:
+			if len(gr)>i:
+				args.append(gr[i])
+		args=(args,)
+		#		args=([cliques[j] for j in range(cli_len) if j%process_num==i],)
+		print "args__________", args
+		pool_result.append(pool.apply_async(process_f,args))
+
+	pool.close()
+	pool.join()
+
+	communities=[]
+	for x in pool_result:
+		communities = communities+x.get()
+	print "finish single seed process___________________"
+
+	return communities
+
 
 def deal_communities(communities):
 	# if there are some communities are the same, than delete
@@ -370,12 +418,21 @@ def compare_communities(community1_nodes, community2_nodes):
 def get_degree_max(nodes):
 	max= -1
 	node  = -1
-	degree_dict = C.degree()
 	for x in nodes:
 		if degree_dict[x] > max:
 			max = degree_dict[x]
 			node = x
 	return node
+
+def get_degree_max_num(nodes,k):
+	sorted(nodes, key=lambda x:degree_dict[x])
+	print "sorted nodes by degree",nodes
+	return nodes[:k]
+
+def get_betweenness_max_num(nodes,k):
+	sorted(nodes, key=lambda x:betweenness_dict[x])
+	print "sorted nodes by betweenness",nodes
+	return nodes[:k]
 
 def get_overlapping_nodes(community1_nodes, community2_nodes):
 	return [x for x in community1_nodes if x in community2_nodes]
@@ -467,6 +524,39 @@ def merge_all_communities(communities):
 		return merge_all_communities(communities)
 	else:
 		return communities
+
+def deal_seeds_GCE_inSDD(cliques):
+	print cliques
+	cliques.sort(key=lambda x:len(x), reverse=True)
+	print "after sorted: ",cliques
+	print "before num: ",len(cliques)
+	len_cli = len(cliques)
+	if len_cli > 2:
+		results = [cliques[0],cliques[1]]
+	else:
+		return cliques
+	def inter_perception(seed,non_seed):
+		inter_nodes = set(seed).intersection(set(non_seed))
+		percent = float(len(inter_nodes)) / float(len(non_seed))
+		return percent
+
+	for i in range(2,len_cli):
+		count = 0
+		for j in results:
+			if inter_perception(j,cliques[i]) >= 1-cch_threshold:
+				count += 1
+			if count >= 2:
+				break
+		if count < 2:
+			results.append(cliques[i])
+
+	print "befor deal_cliques: ", len(results)
+	results = deal_cliques(results)
+	print "after deal_cliques: ",len(results)
+	#results = downsides_seeds(results,2)
+	#print "after downside to ave: ",len(results)
+
+	return results
 
 def main():
 	import sys

@@ -4,7 +4,6 @@ from common.transform import *
 from PyCommDete import *
 from networkx import nx
 from inputs.formal_edgelist import *
-from gce.GCE import *
 from common.input_process import *
 
 from multiprocessing import Pool 
@@ -121,8 +120,6 @@ def get_all_cliques_by_nodes(netw, nodes):
 	return map(lambda x:get_cliques(netw,x), nodes)
 
 
-
-
 if __name__ == "__main__":
 	import time
 	start = time.time()
@@ -138,7 +135,7 @@ if __name__ == "__main__":
 	seeds = downsides_seeds(cliques)
 	print "downsides after:", seeds
 	print "number of downsided seeds:",len(seeds)
-	seeds = deal_seeds_GCE(seeds)
+	seeds = deal_seeds_GCE_inSDD(seeds)
 
 	print "length of seeds: ", len(seeds)
 	print "seeds: ", seeds

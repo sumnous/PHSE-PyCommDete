@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
     communities = get_all_nature_community_LFM(C)
     print "commplete get_all_nature_community"
-    results = deal_communities_with_distance(communities)
+    results = deal_communities(communities)
 
     f = file(base +'/evaluations/mutual3/result_LFM.dat', 'w+')
     for line in results:
