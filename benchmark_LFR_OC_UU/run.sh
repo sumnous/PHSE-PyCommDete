@@ -12,6 +12,8 @@ for i in `seq 2 1 8`;do
 	cd ../
 
 	python2 SeedDrivenDete.py >> ./log/$i.log
+	#python2 ./lfm/LFM.py >> ./log/$i.log
+	#python2 ./gce/GCE.py >> ./log/$i.log
 
 	cd ./evaluations/mutual3
 	make

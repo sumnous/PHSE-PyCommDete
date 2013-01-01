@@ -2,6 +2,7 @@ __author__ = 'wangting'
 
 import networkx as nx
 from PyCommDete import *
+from PyCommDete import deal_cliques
 from inputs.formal_edgelist import *
 from socket import gethostname
 
