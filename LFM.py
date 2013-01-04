@@ -6,7 +6,6 @@ from socket import gethostname
 hn=gethostname()
 exec("from config.%s import *" % hn)
 
-
 def pick_random_node(nodes):
     len_nodes = len(nodes)
     random_num = int(random()*len_nodes)

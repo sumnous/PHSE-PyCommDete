@@ -1,4 +1,4 @@
-base="/Users/jingui/workspace/pycommdete"
+base="/Users/jingui/workspace/PyCommDete"
 
 filelist=[base +'/inputs/GML/polbooks.gml',\
           base +'/inputs/GML/karate.gml',\
