@@ -3,7 +3,7 @@ from __future__ import division
 
 import sys
 import networkx as nx
-
+import pickle
 from random import random
 from multiprocessing import Process, Pool
 from inputs.formal_edgelist import *
@@ -18,6 +18,14 @@ if input_type==1:
 	C = nx.read_gml(filelist[file_num])
 elif input_type==2:
 	C = nx.Graph(formal_edgelist(base +'/benchmark_LFR_OC_UU/network.dat'))
+elif input_type==3:
+    f = file(base + '/inputs/Friendster-dataset/friendster.graph','r')
+    C = pickle.load(f)
+    f.close()
+#print "nodes_______",len(C.nodes())
+#print C.edges()
+#print len(C.edges())
+#exit()
 
 len_C = len(C)
 nodes_C = C.nodes()
@@ -430,9 +438,10 @@ def get_degree_max_num(nodes,k):
 	return nodes[:k]
 
 def get_betweenness_max_num(nodes,k):
-	sorted(nodes, key=lambda x:betweenness_dict[x])
-	print "sorted nodes by betweenness",nodes
-	return nodes[:k]
+    print "left nodes numner:_______", len(nodes)
+    sorted(nodes, key=lambda x:betweenness_dict[x])
+    print "sorted nodes by betweenness",nodes
+    return nodes[:k]
 
 def get_overlapping_nodes(community1_nodes, community2_nodes):
 	return [x for x in community1_nodes if x in community2_nodes]

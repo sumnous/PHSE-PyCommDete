@@ -125,6 +125,7 @@ if __name__ == "__main__":
 	start = time.time()
 
 	C = input_type_fun(input_type)
+    print "read C "
 
 	nodes = get_all_nodes(C,seeds_type)
 	print "nodes:", nodes, "num of nodes: ", len(nodes)

@@ -39,4 +39,8 @@ def input_type_fun(input_type):
             fw.write('\n')
         f.close()
         fw.close()
+    elif input_type==3:
+        f = file(base + '/inputs/Friendster-dataset/friendster.graph','r')
+        C = pickle.load(f)
+        f.close()
     return C

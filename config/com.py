@@ -5,7 +5,7 @@ filelist=[base +'/inputs/GML/polbooks.gml',\
           base +'/inputs/GML/dolphins.gml',\
           base +'/inputs/GML/netscience.gml']
 
-input_type = 2 #1:real gml; 2: benchmark
+input_type = 3 #1:real gml; 2: benchmark; 3: Friendster
 file_num = 2 #0:polbooks;1:karate;2:dolphins;3:netscience
 seeds_type = 2 #1:degree_clique hyper ; 2: betweenness_clique hyper; 3: degree_betweenness hyper
 alpha = 1.0
