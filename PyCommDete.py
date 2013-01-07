@@ -5,13 +5,15 @@ import sys
 import networkx as nx
 import pickle
 from random import random
+from common.transform import split_list
 from multiprocessing import Process, Pool
 from inputs.formal_edgelist import *
-from SeedDrivenDete import *
+#from SeedDrivenDete import *
 from socket import gethostname
 
 hn=gethostname()
 exec("from config.%s import *" % hn)
+
 
 
 if input_type==1:
@@ -19,9 +21,9 @@ if input_type==1:
 elif input_type==2:
 	C = nx.Graph(formal_edgelist(base +'/benchmark_LFR_OC_UU/network.dat'))
 elif input_type==3:
-    f = file(base + '/inputs/Friendster-dataset/friendster.graph','r')
-    C = pickle.load(f)
-    f.close()
+	from inputs.friendster_dataset.friendster_graph import get_friendster_graph
+	C = get_friendster_graph()
+
 #print "nodes_______",len(C.nodes())
 #print C.edges()
 #print len(C.edges())
@@ -331,6 +333,7 @@ def get_single_seed_nature_community_once(nodes):
 		tem_list = get_betweenness_max_num(nodes,process_num)
 	else:
 		tem_list = get_betweenness_max_num(nodes, len(nodes))
+	from SeedDrivenDete import get_all_cliques_by_nodes
 	cliques = get_all_cliques_by_nodes(C,tem_list)
 	pool_result = []
 	if len(cliques) < process_num:
@@ -438,10 +441,10 @@ def get_degree_max_num(nodes,k):
 	return nodes[:k]
 
 def get_betweenness_max_num(nodes,k):
-    print "left nodes numner:_______", len(nodes)
-    sorted(nodes, key=lambda x:betweenness_dict[x])
-    print "sorted nodes by betweenness",nodes
-    return nodes[:k]
+	print "left nodes numner:_______", len(nodes)
+	sorted(nodes, key=lambda x:betweenness_dict[x])
+	print "sorted nodes by betweenness",nodes
+	return nodes[:k]
 
 def get_overlapping_nodes(community1_nodes, community2_nodes):
 	return [x for x in community1_nodes if x in community2_nodes]

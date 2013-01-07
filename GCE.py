@@ -16,7 +16,7 @@ def find_maximum_clique_GCE(network):
     cl_over_4 = filter(lambda x:len(x)>=4, cl)
     seeds = deal_seeds_GCE(cl_over_4)
 #    seeds = downsides_seeds(seeds,2)
-    print "seeds:\n", seeds
+#    print "seeds:\n", seeds
     print "number of seeds for computing: ", len(seeds)
     return seeds
 
@@ -196,26 +196,12 @@ def deal_communities_with_distance(communities):
 if __name__ == "__main__":
     import time
     start = time.time()
-
+    from common.input_process import input_type_fun
     C = input_type_fun(input_type)
 
     seeds = find_maximum_clique_GCE(C)
     print "length of seeds: ", len(seeds)
     print "seeds: ", seeds
-    #anlysis the cliques's fitness
-#    seeds_fitness = map(lambda x: get_fitness(x), [nx.Graph(C.subgraph(seed)) for seed in seeds])
-#    print "seeds_fitness",seeds_fitness
-#    seedsort = {}
-#    for i in range(len(seeds)):
-#        seedsort[i] = seeds_fitness[i]
-#    after = sorted(seedsort.items(), key = lambda x:x[1], reverse=True)
-#    print "after sort list of tuple:",after
-#    seeds_sorted = []
-#    for x in after:
-#        seeds_sorted.append(seeds[x[0]])
-#    print "seeds_sorted", seeds_sorted
-    #	seeds_deal = deal_cliques(seeds_sorted)
-    #	print "seeds_deal", seeds_deal
 
     communities = get_all_nature_community_GCE(seeds)
     print "commplete get_all_nature_community"

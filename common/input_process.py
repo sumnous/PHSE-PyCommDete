@@ -40,7 +40,9 @@ def input_type_fun(input_type):
         f.close()
         fw.close()
     elif input_type==3:
-        f = file(base + '/inputs/Friendster-dataset/friendster.graph','r')
-        C = pickle.load(f)
-        f.close()
+        from inputs.friendster_dataset.friendster_graph import get_friendster_graph
+#        C = nx.Graph()
+        C = get_friendster_graph()
+
+        print len(C)
     return C

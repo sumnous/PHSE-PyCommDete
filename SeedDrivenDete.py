@@ -6,7 +6,7 @@ from networkx import nx
 from inputs.formal_edgelist import *
 from common.input_process import *
 
-from multiprocessing import Pool 
+from multiprocessing import Pool
 from sys import exit
 
 import numpy as np
@@ -123,9 +123,10 @@ def get_all_cliques_by_nodes(netw, nodes):
 if __name__ == "__main__":
 	import time
 	start = time.time()
-
+#	global C
 	C = input_type_fun(input_type)
-    print "read C "
+	print "nodes and edges_____________:", len(C.nodes()), ", ", len(C.edges())
+	print "read network over________________________"
 
 	nodes = get_all_nodes(C,seeds_type)
 	print "nodes:", nodes, "num of nodes: ", len(nodes)
