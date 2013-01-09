@@ -1,10 +1,8 @@
 __author__ = 'wangting'
 
 from PyCommDete import *
-from socket import gethostname
+from config.config import *
 
-hn=gethostname()
-exec("from config.%s import *" % hn)
 
 def pick_random_node(nodes):
     len_nodes = len(nodes)

@@ -1,6 +1,4 @@
 
-from common.transform import *
-
 from PyCommDete import *
 from networkx import nx
 from inputs.formal_edgelist import *
