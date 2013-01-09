@@ -14,7 +14,7 @@ from socket import gethostname
 hn=gethostname()
 exec("from config.%s import *" % hn)
 
-
+#this is redis#
 
 if input_type==1:
 	C = nx.read_gml(filelist[file_num])
