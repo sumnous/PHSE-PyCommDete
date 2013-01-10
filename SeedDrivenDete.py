@@ -22,15 +22,14 @@ def get_all_nodes_by_degree(netw, d_threshold=0, min_distance=1):
 		btmap[nd[0]-1]=nd[0]
 	def mark_zero(node_lst, deep):
 		if deep > 0:
-			for i in node_lst:
-				if btmap[i-1]:
-					nei=netw.neighbors(i)
-					nei=[n for n in nei if btmap[n-1]]
-					for x in nei:
-						btmap[x-1]=0
+			for i in node_lst if btmap[i-1]:
+				nei=netw.neighbors(i)
+				nei=[n for n in nei if btmap[n-1]]
+				for x in nei:
+					btmap[x-1]=0
 
-					nei_nei = [netw.neighbors(n).remove(i) for n in nei if btmap[n-1]]
-					map(lambda x:mark_zero(x, deep-1), nei_nei)
+				nei_nei = [netw.neighbors(n).remove(i) for n in nei if btmap[n-1]]
+				map(lambda x:mark_zero(x, deep-1), nei_nei)
 	mark_zero([nd[0] for nd in node_degree], min_distance)
 
 	return [node[0] for node in node_degree if btmap[node[0]-1]]
