@@ -2,6 +2,7 @@ __author__ = 'wangting'
 
 import networkx as nx
 from inputs.formal_edgelist import  *
+from config.config import *
 
 
 def input_type_fun(input_type):
@@ -40,6 +41,7 @@ def input_type_fun(input_type):
         f.close()
         fw.close()
     elif input_type==3:
+        #redis
         from inputs.friendster_dataset.friendster_graph import get_friendster_graph
 #        C = nx.Graph()
         C = get_friendster_graph()

@@ -4,10 +4,7 @@ import networkx as nx
 from PyCommDete import *
 from PyCommDete import deal_cliques
 from inputs.formal_edgelist import *
-from socket import gethostname
-
-hn=gethostname()
-exec("from config.%s import *" % hn)
+from config.config import *
 
 def find_maximum_clique_GCE(network):
     # find the maximum cliques in network C, clique's nodes are over 4.

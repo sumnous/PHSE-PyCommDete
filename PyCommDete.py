@@ -1,20 +1,11 @@
 # -*- coding: utf8 -*-
 from __future__ import division
 
-import sys
 import networkx as nx
-import pickle
-from random import random
 from common.transform import split_list
 from multiprocessing import Process, Pool
 from inputs.formal_edgelist import *
-#from SeedDrivenDete import *
-from socket import gethostname
-
-hn=gethostname()
-exec("from config.%s import *" % hn)
-
-
+from config.config import *
 
 if input_type==1:
 	C = nx.read_gml(filelist[file_num])
