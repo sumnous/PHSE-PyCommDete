@@ -1,8 +1,6 @@
 # -*- coding: utf8 -*-
 
-from socket import gethostname
-hn=gethostname()
-exec("from config.%s import *" % hn)
+from config import *
 
 def formal_edgelist(fname):
     f = file(fname, 'r')

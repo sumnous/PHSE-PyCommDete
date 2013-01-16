@@ -6,29 +6,7 @@ from common.transform import split_list
 from multiprocessing import Process, Pool
 from inputs.formal_edgelist import *
 from config.config import *
-
-if input_type==1:
-	C = nx.read_gml(filelist[file_num])
-elif input_type==2:
-	C = nx.Graph(formal_edgelist(base +'/benchmark_LFR_OC_UU/network.dat'))
-elif input_type==3:
-	from inputs.friendster_dataset.friendster_graph import get_friendster_graph
-	C = get_friendster_graph()
-
-#print "nodes_______",len(C.nodes())
-#print C.edges()
-#print len(C.edges())
-#exit()
-
-len_C = len(C)
-nodes_C = C.nodes()
-degree_dict = C.degree()
-betweenness_dict = nx.betweenness_centrality(C)
-
-len_max = len_C
-if len_C >= 1000:
-	len_max = len_C*0.1
-
+from graph import Graph
 
 def get_maximum_cliques(network):
 	# find the maximum cliques in network C, clique's nodes are over 2.
