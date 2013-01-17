@@ -2,13 +2,13 @@ from PyCommDete import *
 
 from inputs.formal_edgelist import *
 from common.input_process import *
-from multiprocessing import Pool
-import numpy as np
+#from multiprocessing import Pool
+#import numpy as np
 
 from graph import Graph
 from node import Node
 import logging
-#from networkx import nx
+
 
 def get_all_nodes_by_degree(netw, d_threshold=0, min_distance=1):
     nd = netw.degree()
@@ -117,9 +117,16 @@ def get_cliques(n):
     subgraph = n.get_neighbors_id()
     subgraph.append(n.node_id)
 
+    g = Graph(nodes=subgraph)
+    print len(g)
+    g.find_max_cliques(include_node_id = n.node_id)
+    exit()
+
 #    keep use networkx
     g = nx.Graph(nx.subgraph(subgraph))
     cliques = nx.find_cliques(g)
+    print "done"
+    exit()
 
     re = []
     for cli in cliques:

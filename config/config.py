@@ -1,17 +1,19 @@
-from socket import gethostname
-hn=gethostname()
-exec("from %s import *" % hn)
+#from socket import gethostname
+#hn=gethostname()
+#exec("from %s import *" % hn)
+
+base="~/git/pycommdete"
 
 filelist=[base +'/inputs/GML/polbooks.gml',\
           base +'/inputs/GML/karate.gml',\
           base +'/inputs/GML/dolphins.gml',\
           base +'/inputs/GML/netscience.gml']
 
-rhost = "localhost"
+rhost = 'localhost'
 rport = 6379
-rdb=0
+rdb = 0
 
-input_type = 1 #1:real gml; 2: benchmark; 3: Friendster
+input_type = 3 #1:real gml; 2: benchmark; 3: Friendster
 file_num = 1 #0:polbooks;1:karate;2:dolphins;3:netscience
 seeds_type = 2 #1:degree_clique hyper ; 2: betweenness_clique hyper; 3: degree_betweenness hyper
 alpha = 1.0

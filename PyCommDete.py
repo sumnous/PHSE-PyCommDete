@@ -4,7 +4,7 @@ from __future__ import division
 import networkx as nx
 from common.transform import split_list
 from multiprocessing import Process, Pool
-from inputs.formal_edgelist import *
+#from inputs.formal_edgelist import *
 from config.config import *
 from graph import Graph
 
