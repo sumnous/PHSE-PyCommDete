@@ -1,7 +1,7 @@
 # -*- coding: utf8 -*-
 from __future__ import division
 
-import networkx as nx
+#import networkx as nx
 from common.transform import split_list
 from multiprocessing import Process, Pool
 #from inputs.formal_edgelist import *

@@ -13,6 +13,8 @@ rhost = 'localhost'
 rport = 6379
 rdb = 0
 
+CLIQUE_MIN_SIZE=3
+
 input_type = 3 #1:real gml; 2: benchmark; 3: Friendster
 file_num = 1 #0:polbooks;1:karate;2:dolphins;3:netscience
 seeds_type = 2 #1:degree_clique hyper ; 2: betweenness_clique hyper; 3: degree_betweenness hyper
@@ -27,6 +29,6 @@ cch_threshold = 0.25 #similarity more than 1-cch_threshold in at least 2 already
 # #clique coverage heuristic
 delta_threshold = 0.6
 
-process_num=32
+process_num=8
 thread_num=4
 

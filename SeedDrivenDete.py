@@ -2,11 +2,12 @@ from PyCommDete import *
 
 from inputs.formal_edgelist import *
 from common.input_process import *
-#from multiprocessing import Pool
+from multiprocessing import Pool
 #import numpy as np
 
 from graph import Graph
 from node import Node
+from node import get_neighbors_id
 import logging
 
 
@@ -111,50 +112,60 @@ def get_cliques(n):
     """
     type(n) is Node
     """
-    if not isinstance(n, Node):
-        logging.error("node type error")
+#    if not isinstance(n, Node):
+#        logging.error("node type error")
 
-    subgraph = n.get_neighbors_id()
-    subgraph.append(n.node_id)
+    neighbors = get_neighbors_id(n)
+    neighbors.append(n)
 
-    g = Graph(nodes=subgraph)
-    print len(g)
-    g.find_max_cliques(include_node_id = n.node_id)
-    exit()
-
-#    keep use networkx
-    g = nx.Graph(nx.subgraph(subgraph))
-    cliques = nx.find_cliques(g)
-    print "done"
-    exit()
-
-    re = []
-    for cli in cliques:
-        if n.node_id in cli and len(cli) > len(re):
-            re = cli
-    return re
+#    TODO
+#    improve: not construct graph when get cliques
+    g = Graph(nodes=neighbors)
+    all_clique = g.find_cliques_by_node(n, min_size=CLIQUE_MIN_SIZE)
+#    print [len(x) for x in all_clique]
+    max_clique = []
+    for x in all_clique:
+        if len(x) > len(max_clique):
+            max_clique = x
+    return max_clique
 
 
-def get_all_cliques_by_nodes(nodes):
-    return map(lambda x: get_cliques(x), nodes)
+def get_all_cliques_by_nodes(nds):
+    return map(lambda x: get_cliques(x), nds)
 
 
 if __name__ == "__main__":
     logging.basicConfig( level=logging.DEBUG)
-
     import time
-
     start = time.time()
 
+##    construct a graph based on redis
     netw = Graph(default=True)
     nodes = netw.get_nodes()
     logging.debug("len of graph nodes: " + str(len(nodes)))
 
-    cliques = get_all_cliques_by_nodes(nodes)
-    logging.info(cliques)
+##    get cliques by nodes
+    nodes = nodes[:100]
+    pool = Pool(process_num)
+    cliques = []
+    end = step = len(nodes)/process_num
+    start = 0
+    while end < len(nodes)-1:
+        cliques.append(pool.apply_async(get_all_cliques_by_nodes, (nodes[start:end],)))
+        end += step
+    pool.close()
+    pool.join()
+    n_cliques = []
+    for x in cliques:
+        lst = [c for c in x.get() if len(c)]
+        n_cliques += lst
+    cliques = n_cliques
+#    print "len of cliques: ", len(cliques)
+#    print cliques
+#    exit()
 
-    print "len of cliques: ", len(cliques)
-    exit()
+
+##    downsides seeds
     seeds = downsides_seeds(cliques)
     print "downsides after:", seeds
     print "number of downsided seeds:", len(seeds)

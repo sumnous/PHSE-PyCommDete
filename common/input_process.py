@@ -1,6 +1,6 @@
 __author__ = 'wangting'
 
-import networkx as nx
+#import networkx as nx
 from inputs.formal_edgelist import  *
 from config.config import *
 
