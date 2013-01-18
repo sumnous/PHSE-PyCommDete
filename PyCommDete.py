@@ -1,29 +1,30 @@
 # -*- coding: utf8 -*-
 from __future__ import division
 
-#import networkx as nx
 from common.transform import split_list
-from multiprocessing import Process, Pool
+from multiprocessing import Pool
 #from inputs.formal_edgelist import *
 from config.config import *
 from graph import Graph
 
+##used in PyCommDete main
 def get_maximum_cliques(network):
 	# find the maximum cliques in network C, clique's nodes are over 2.
 	# http://networkx.lanl.gov/reference/algorithms.clique.html
 	cl = [x for x in nx.find_cliques(network)]
+
 	cl_over_2 = filter(lambda x:len(x)>2, cl)
 	print "_________len", len(cl_over_2)
 #	seeds = deal_cliques(cl_over_2)
 	seeds = cl_over_2
 	print ":::::::::::",seeds
 
-
 	seeds = downsides_seeds(seeds)
 
 	print "seeds:\n", seeds
 	print "number of seeds for computing: ", len(seeds)
 	return seeds
+
 
 def downsides_seeds(seeds,avg_type = 1):
 	count_len = [len(x) for x in seeds]
@@ -41,6 +42,7 @@ def downsides_seeds(seeds,avg_type = 1):
 	seeds = [x for x in seeds if len(x) >= MinSeedSize]
 	seeds.sort(key=lambda x:len(x), reverse = True)
 	return seeds
+
 
 def deal_cliques(cliques):
 	new_cliques = deal_cliques_once(cliques)
@@ -75,7 +77,6 @@ def deal_cliques_once(cliques):
 
 		remain=[i for i,e in enumerate(bitmap) if e==0]
 
-
 		def c_match(current_list, c):
 			x = set(cliques[c])
 			for i in current_list:
@@ -108,17 +109,19 @@ def get_neighbors(Graph):
 
 	return [x for x in nodes_C if flag.get(x)]
 
-def get_fitness(Graph):
-	"""compute the fitness of the graph"""
-	if len(Graph.nodes()) == 1:
-		return float(0)
 
-	kin = 2 * len(Graph.edges())
-	G_neighbors = get_neighbors(Graph)   # find G's neighbor nodes
-	G_with_neighbors = G_neighbors + Graph.nodes()
-	G_nei = nx.Graph(C.subgraph(G_with_neighbors))
-	kout = len(G_nei.edges()) - len(Graph.edges())
-	return  kin / pow((kin+kout), alpha)
+def get_fitness(g):
+    """
+    type(g) is Graph
+    compute the fitness of the graph
+    """
+    if len(g.nodes_id) <= 1:
+        return float(0)
+
+    neighbor_g = Graph(nodes=g.get_neighbors_with_self())
+    kin = g.get_edges_num()
+    kout = neighbor_g.get_edges_num() - kin
+    return  (2 * kin) / pow((2 * kin + kout), alpha)
 
 #def get_fitness_v_max(Graph):
 #	"""这有个问题，如果最大贡献度所对应的节点有多个怎么处理，是添加第一个最大的节点，还是所有的都添加
@@ -356,7 +359,6 @@ def deal_communities(communities):
 		for x in com:
 			if len(x)> len(item) and set(item).issubset(set(x.nodes())):
 				return True
-
 		return False
 
 	bitmap=[0]*len(communities)

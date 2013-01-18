@@ -145,7 +145,7 @@ if __name__ == "__main__":
     logging.debug("len of graph nodes: " + str(len(nodes)))
 
 ##    get cliques by nodes
-    nodes = nodes[:100]
+    nodes = nodes[:50]
     pool = Pool(process_num)
     cliques = []
     end = step = len(nodes)/process_num
@@ -162,20 +162,24 @@ if __name__ == "__main__":
     cliques = n_cliques
 #    print "len of cliques: ", len(cliques)
 #    print cliques
-#    exit()
-
 
 ##    downsides seeds
     seeds = downsides_seeds(cliques)
     print "downsides after:", seeds
     print "number of downsided seeds:", len(seeds)
     seeds = deal_seeds_GCE_inSDD(seeds)
-
     print "length of seeds: ", len(seeds)
     print "seeds: ", seeds
-    #anlysis the cliques's fitness
-    seeds_fitness = map(lambda x: get_fitness(x), [nx.Graph(C.subgraph(seed)) for seed in seeds])
+
+
+##    anlysis the cliques's fitness
+    seeds_fitness = map(lambda x: get_fitness(x), [Graph(nodes = list(seed)) for seed in seeds])
     print "seeds_fitness", seeds_fitness
+
+#    print "Done"
+#    exit()
+
+#   TODO to be improved!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     seedsort = {}
     for i in range(len(seeds)):
         seedsort[i] = seeds_fitness[i]
