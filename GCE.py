@@ -128,7 +128,7 @@ def get_nature_community_N_GCE(cliques):
         args=(args,)
         #		args=([cliques[j] for j in range(cli_len) if j%process_num==i],)
         print "args__________", args
-        pool_result.append(pool.apply_async(process_f,args))
+        pool_result.append(pool.apply_async(process_clique_list,args))
 
     pool.close()
     pool.join()

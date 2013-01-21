@@ -1,10 +1,8 @@
 from PyCommDete import *
-
 from inputs.formal_edgelist import *
 from common.input_process import *
 from multiprocessing import Pool
 #import numpy as np
-
 from graph import Graph
 from node import Node
 from node import get_neighbors_id
@@ -38,7 +36,7 @@ def get_all_nodes_by_degree(netw, d_threshold=0, min_distance=1):
 
 def get_all_nodes(netw, seeds_type):
     if seeds_type == 1:
-        orig = C.degree()
+        orig = dgraph.degree()
     elif seeds_type == 2:
         orig = nx.betweenness_centrality(netw)
     elif seeds_type == 3:
@@ -55,7 +53,7 @@ def get_all_nodes(netw, seeds_type):
         for x in betw_ex_nei:
             if bitmap[x - 1] > 0:
                 recover.append(x)
-                nei = C.neighbors(x)
+                nei = dgraph.neighbors(x)
                 for n in nei:
                     bitmap[n - 1] = 0
         for x in recover:
@@ -74,7 +72,7 @@ def get_all_nodes(netw, seeds_type):
         for x in degr_ex_nei:
             if bitmap[x - 1] > 0:
                 recover.append(x)
-                nei = C.neighbors(x)
+                nei = dgraph.neighbors(x)
                 for n in nei:
                     bitmap[n - 1] = 0
         for x in recover:
@@ -99,7 +97,7 @@ def get_all_nodes(netw, seeds_type):
     for x in orig_over_ave:
         if bitmap[x - 1] > 0:
             recover.append(x)
-            nei = C.neighbors(x)
+            nei = dgraph.neighbors(x)
             for n in nei:
                 bitmap[n - 1] = 0
     for x in recover:
@@ -112,17 +110,17 @@ def get_cliques(n):
     """
     type(n) is Node
     """
-#    if not isinstance(n, Node):
-#        logging.error("node type error")
+    #    if not isinstance(n, Node):
+    #        logging.error("node type error")
 
     neighbors = get_neighbors_id(n)
     neighbors.append(n)
 
-#    TODO
-#    improve: not construct graph when get cliques
+    #    TODO
+    #    improve: not construct graph when get cliques
     g = Graph(nodes=neighbors)
     all_clique = g.find_cliques_by_node(n, min_size=CLIQUE_MIN_SIZE)
-#    print [len(x) for x in all_clique]
+    #    print [len(x) for x in all_clique]
     max_clique = []
     for x in all_clique:
         if len(x) > len(max_clique):
@@ -135,22 +133,25 @@ def get_all_cliques_by_nodes(nds):
 
 
 if __name__ == "__main__":
-    logging.basicConfig( level=logging.DEBUG)
+    logging.basicConfig(level=logging.DEBUG)
     import time
+
     start = time.time()
 
-##    construct a graph based on redis
+    ##    construct a graph based on redis
     netw = Graph(default=True)
     nodes = netw.get_nodes()
+    GRAPH_LEN = len(nodes)
+
     logging.debug("len of graph nodes: " + str(len(nodes)))
 
-##    get cliques by nodes
+    ##    get cliques by nodes
     nodes = nodes[:50]
     pool = Pool(process_num)
     cliques = []
-    end = step = len(nodes)/process_num
+    end = step = len(nodes) / process_num
     start = 0
-    while end < len(nodes)-1:
+    while end < len(nodes) - 1:
         cliques.append(pool.apply_async(get_all_cliques_by_nodes, (nodes[start:end],)))
         end += step
     pool.close()
@@ -160,10 +161,10 @@ if __name__ == "__main__":
         lst = [c for c in x.get() if len(c)]
         n_cliques += lst
     cliques = n_cliques
-#    print "len of cliques: ", len(cliques)
-#    print cliques
+    #    print "len of cliques: ", len(cliques)
+    #    print cliques
 
-##    downsides seeds
+    ##    downsides seeds
     seeds = downsides_seeds(cliques)
     print "downsides after:", seeds
     print "number of downsided seeds:", len(seeds)
@@ -172,14 +173,11 @@ if __name__ == "__main__":
     print "seeds: ", seeds
 
 
-##    anlysis the cliques's fitness
-    seeds_fitness = map(lambda x: get_fitness(x), [Graph(nodes = list(seed)) for seed in seeds])
+    ##    anlysis the cliques's fitness
+    seeds_fitness = map(lambda x: get_fitness(x), [Graph(nodes=list(seed)) for seed in seeds])
     print "seeds_fitness", seeds_fitness
 
-    print "Done"
-    exit()
-
-#   TODO to be improved!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    #   TODO to be improved!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     seedsort = {}
     for i in range(len(seeds)):
         seedsort[i] = seeds_fitness[i]
@@ -193,6 +191,7 @@ if __name__ == "__main__":
     #	print "seeds_deal", seeds_deal
 
     communities = get_all_nature_community(seeds_sorted)
+
     print "commplete get_all_nature_community"
     results = merge_all_communities(communities)
 
@@ -212,7 +211,7 @@ if __name__ == "__main__":
     print "all communities: "
     i = 1
     for x in results:
-        print "i = ", i, ":", sorted(x.nodes())
+        print "i = ", i, ":", sorted(x)
         i += 1
     overlapping_nodes = set([])
     commu = [set(x) for x in results]
