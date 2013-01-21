@@ -39,7 +39,7 @@ def get_all_nature_community_multiprocess(left_nodes_list):
         args=(args,)
         #		args=([random_nodes[j] for j in range(process_num) if j%process_num==i],)
         print "args__________", args
-        pool_result.append(pool.apply_async(process_f,args))
+        pool_result.append(pool.apply_async(process_clique_list,args))
 
     pool.close()
     pool.join()

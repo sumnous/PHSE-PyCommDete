@@ -38,7 +38,7 @@ def get_all_nodes_by_degree(netw, d_threshold=0, min_distance=1):
 
 def get_all_nodes(netw, seeds_type):
     if seeds_type == 1:
-        orig = C.degree()
+        orig = dgraph.degree()
     elif seeds_type == 2:
         orig = nx.betweenness_centrality(netw)
     elif seeds_type == 3:
@@ -55,7 +55,7 @@ def get_all_nodes(netw, seeds_type):
         for x in betw_ex_nei:
             if bitmap[x - 1] > 0:
                 recover.append(x)
-                nei = C.neighbors(x)
+                nei = dgraph.neighbors(x)
                 for n in nei:
                     bitmap[n - 1] = 0
         for x in recover:
@@ -74,7 +74,7 @@ def get_all_nodes(netw, seeds_type):
         for x in degr_ex_nei:
             if bitmap[x - 1] > 0:
                 recover.append(x)
-                nei = C.neighbors(x)
+                nei = dgraph.neighbors(x)
                 for n in nei:
                     bitmap[n - 1] = 0
         for x in recover:
@@ -99,7 +99,7 @@ def get_all_nodes(netw, seeds_type):
     for x in orig_over_ave:
         if bitmap[x - 1] > 0:
             recover.append(x)
-            nei = C.neighbors(x)
+            nei = dgraph.neighbors(x)
             for n in nei:
                 bitmap[n - 1] = 0
     for x in recover:
@@ -142,6 +142,8 @@ if __name__ == "__main__":
 ##    construct a graph based on redis
     netw = Graph(default=True)
     nodes = netw.get_nodes()
+    GRAPH_LEN = len(nodes)
+
     logging.debug("len of graph nodes: " + str(len(nodes)))
 
 ##    get cliques by nodes
@@ -176,9 +178,6 @@ if __name__ == "__main__":
     seeds_fitness = map(lambda x: get_fitness(x), [Graph(nodes = list(seed)) for seed in seeds])
     print "seeds_fitness", seeds_fitness
 
-#    print "Done"
-#    exit()
-
 #   TODO to be improved!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     seedsort = {}
     for i in range(len(seeds)):
@@ -193,6 +192,7 @@ if __name__ == "__main__":
     #	print "seeds_deal", seeds_deal
 
     communities = get_all_nature_community(seeds_sorted)
+
     print "commplete get_all_nature_community"
     results = merge_all_communities(communities)
 
@@ -212,7 +212,7 @@ if __name__ == "__main__":
     print "all communities: "
     i = 1
     for x in results:
-        print "i = ", i, ":", sorted(x.nodes())
+        print "i = ", i, ":", sorted(x)
         i += 1
     overlapping_nodes = set([])
     commu = [set(x) for x in results]

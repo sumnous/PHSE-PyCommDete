@@ -44,11 +44,6 @@ elif input_type == 3:
     C = get_friendster_graph()
     print "////", len(C)
 
-len_C = len(C)
 nodes_C = C.nodes()
 degree_dict = C.degree()
 betweenness_dict = nx.betweenness_centrality(C)
-
-len_max = len_C
-if len_C >= 1000:
-    len_max = len_C * 0.1
