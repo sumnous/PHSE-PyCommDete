@@ -176,8 +176,8 @@ if __name__ == "__main__":
     seeds_fitness = map(lambda x: get_fitness(x), [Graph(nodes = list(seed)) for seed in seeds])
     print "seeds_fitness", seeds_fitness
 
-#    print "Done"
-#    exit()
+    print "Done"
+    exit()
 
 #   TODO to be improved!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     seedsort = {}
