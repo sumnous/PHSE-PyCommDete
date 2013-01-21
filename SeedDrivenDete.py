@@ -112,17 +112,17 @@ def get_cliques(n):
     """
     type(n) is Node
     """
-#    if not isinstance(n, Node):
-#        logging.error("node type error")
+    #    if not isinstance(n, Node):
+    #        logging.error("node type error")
 
     neighbors = get_neighbors_id(n)
     neighbors.append(n)
 
-#    TODO
-#    improve: not construct graph when get cliques
+    #    TODO
+    #    improve: not construct graph when get cliques
     g = Graph(nodes=neighbors)
     all_clique = g.find_cliques_by_node(n, min_size=CLIQUE_MIN_SIZE)
-#    print [len(x) for x in all_clique]
+    #    print [len(x) for x in all_clique]
     max_clique = []
     for x in all_clique:
         if len(x) > len(max_clique):
@@ -135,24 +135,25 @@ def get_all_cliques_by_nodes(nds):
 
 
 if __name__ == "__main__":
-    logging.basicConfig( level=logging.DEBUG)
+    logging.basicConfig(level=logging.DEBUG)
     import time
+
     start = time.time()
 
-##    construct a graph based on redis
+    ##    construct a graph based on redis
     netw = Graph(default=True)
     nodes = netw.get_nodes()
     GRAPH_LEN = len(nodes)
 
     logging.debug("len of graph nodes: " + str(len(nodes)))
 
-##    get cliques by nodes
+    ##    get cliques by nodes
     nodes = nodes[:50]
     pool = Pool(process_num)
     cliques = []
-    end = step = len(nodes)/process_num
+    end = step = len(nodes) / process_num
     start = 0
-    while end < len(nodes)-1:
+    while end < len(nodes) - 1:
         cliques.append(pool.apply_async(get_all_cliques_by_nodes, (nodes[start:end],)))
         end += step
     pool.close()
@@ -162,10 +163,10 @@ if __name__ == "__main__":
         lst = [c for c in x.get() if len(c)]
         n_cliques += lst
     cliques = n_cliques
-#    print "len of cliques: ", len(cliques)
-#    print cliques
+    #    print "len of cliques: ", len(cliques)
+    #    print cliques
 
-##    downsides seeds
+    ##    downsides seeds
     seeds = downsides_seeds(cliques)
     print "downsides after:", seeds
     print "number of downsided seeds:", len(seeds)
@@ -174,11 +175,11 @@ if __name__ == "__main__":
     print "seeds: ", seeds
 
 
-##    anlysis the cliques's fitness
-    seeds_fitness = map(lambda x: get_fitness(x), [Graph(nodes = list(seed)) for seed in seeds])
+    ##    anlysis the cliques's fitness
+    seeds_fitness = map(lambda x: get_fitness(x), [Graph(nodes=list(seed)) for seed in seeds])
     print "seeds_fitness", seeds_fitness
 
-#   TODO to be improved!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    #   TODO to be improved!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     seedsort = {}
     for i in range(len(seeds)):
         seedsort[i] = seeds_fitness[i]
