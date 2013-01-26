@@ -6,13 +6,12 @@ from common.transform import split_list
 from multiprocessing import Pool
 #from inputs.formal_edgelist import *
 from config import config
-
 from graph import Graph
 from graph import get_graph_nodes_len
 from graph import get_neighbors_id
 
 
-logging.basicConfig( level=logging.DEBUG)
+logging.basicConfig( level=logging.INFO)
 GRAPH_LEN = get_graph_nodes_len()
 MAX_LEN = GRAPH_LEN
 if MAX_LEN >= 1000:
