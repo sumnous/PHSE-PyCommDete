@@ -1,0 +1,32 @@
+nodes and edges_____________: 34 ,  78
+read network over________________________
+nodes: [1, 34] num of nodes:  2
+[[1, 2, 3, 4, 8], [34, 33, 9, 31]]
+len of cliques:  2
+downsides after: [[1, 2, 3, 4, 8], [34, 33, 9, 31]]
+number of downsided seeds: 2
+[[1, 2, 3, 4, 8], [34, 33, 9, 31]]
+after sorted:  [[1, 2, 3, 4, 8], [34, 33, 9, 31]]
+before num:  2
+length of seeds:  2
+seeds:  [[1, 2, 3, 4, 8], [34, 33, 9, 31]]
+seeds_fitness [0.37037037037037035, 0.2222222222222222]
+after sort list of tuple: [(0, 0.37037037037037035), (1, 0.2222222222222222)]
+seeds_sorted [[1, 2, 3, 4, 8], [34, 33, 9, 31]]
+args__________ ([[1, 2, 3, 4, 8]],)
+args__________ ([[34, 33, 9, 31]],)
+finish process___________________
+i =  0 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 20, 22, 29, 31]
+i =  1 [32, 33, 34, 9, 10, 15, 16, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+finish get all communities
+complete deal_communities
+commplete get_all_nature_community
+base is  /Users/ting/workspace/PyCommDete
+----------------------------------The detection result is: 
+
+all communities: 
+i =  1 : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 20, 22, 29, 31]
+i =  2 : [9, 10, 15, 16, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]
+overlapping nodes are:  [9, 10, 20, 29, 31] 
+ NOO is:  5
+total time is:  0.217194080353

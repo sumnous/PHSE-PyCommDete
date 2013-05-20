@@ -1,4 +1,4 @@
-base="/home/n/git/PyCommDete"
+base="/home/lijingui/py/PyCommDete"
 
 filelist=[base +'/inputs/GML/polbooks.gml',\
           base +'/inputs/GML/karate.gml',\
@@ -18,5 +18,5 @@ dis_threshold = 0.25 #small than dis_threshold, then delete this community
 cch_threshold = 0.25 #similarity more than 1-cch_threshold in at least 2 already accepted seeds, then delete this clique
 # #clique coverage heuristic
 
-process_num=64
+process_num=128
 thread_num=4
