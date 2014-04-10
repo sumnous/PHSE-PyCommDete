@@ -1,4 +1,4 @@
-PyCommDete
+PHSE (PyCommDete)
 ==========
 This is a novel algorithm to detect overlapping communities in social networks. 
 
