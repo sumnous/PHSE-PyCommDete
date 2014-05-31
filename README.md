@@ -11,3 +11,6 @@ Thirdly, detect communities in networks (SeedDrivenDete.py). I also implemente t
 At last, evaluate the detection results using NMI figure. --> /evaluations/mutual3/
 
 Basiclly, the run.sh file (in /benchmark_LFR_OC_UU)can do all the detection work from generating the benchmark, detecting the communities, to evaluating the results of NMI. 
+
+Paper: An Improved Parallel Hybrid Seed Expansion (PHSE) Method for Detecting Highly Overlapping Communities in Social Networks, Ting Wang, Xu Qian, Hui Xu, ADMA, 2013. 
+Link: http://link.springer.com/chapter/10.1007%2F978-3-642-53914-5_33#page-1
